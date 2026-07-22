@@ -27,7 +27,7 @@
   "aboutPreview": {
     "title": "About CallisCanes",
     "body": "A family owned business in Middle GA.",
-    "image": "images/about/about-01.webp",
+    "image": "images/about/about-02.webp",
     "cta": { "label": "Learn More", "to": "/about" }
   },
   "galleryPreview": {

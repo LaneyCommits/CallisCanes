@@ -21,7 +21,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Always dismiss the drawer after any route change
+  // Dismiss drawer immediately on route change so it never sits over the next page
   useLayoutEffect(() => {
     setMenuOpen(false);
     window.scrollTo(0, 0);
@@ -92,13 +92,14 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            key="nav-overlay"
             className="nav-overlay open"
             onClick={closeMenu}
             aria-hidden="true"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            exit={{ opacity: 0, transition: { duration: 0 } }}
+            transition={{ duration: 0.2 }}
           />
         )}
       </AnimatePresence>
@@ -106,12 +107,13 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
+            key="mobile-nav"
             id="mobile-nav"
             className="nav-mobile open"
             aria-label="Mobile navigation"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            exit={{ x: '100%', transition: { duration: 0 } }}
             transition={{ duration: 0.35, ease: EASE_OUT }}
           >
             <div className="nav-mobile-header">

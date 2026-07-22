@@ -102,15 +102,9 @@ export default function GalleryPage() {
                 autoPlay
               />
             ) : lightbox.image ? (
-              <img src={caneImageUrl(lightbox.image)} alt={lightbox.title} />
+              <img src={caneImageUrl(lightbox.image)} alt={lightbox.title || ''} />
             ) : (
               <div className="gallery-masonry-placeholder" style={{ minWidth: 280, minHeight: 320 }} />
-            )}
-            {(lightbox.title || lightbox.caption) && (
-              <p className="lightbox-caption">
-                {lightbox.title}
-                {lightbox.caption ? ` — ${lightbox.caption}` : ''}
-              </p>
             )}
           </div>
           <button type="button" className="lightbox-backdrop" aria-label="Close" onClick={() => setLightbox(null)} />

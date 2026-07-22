@@ -1,23 +1,5 @@
 [
   {
-    "id": 1,
-    "slug": "masonic-tribute-cane",
-    "name": "Masonic Tribute Cane",
-    "wood": "",
-    "price": 150,
-    "status": "Display",
-    "height": "",
-    "finish": "",
-    "description": "Featured showpiece — on display, not for sale. Inquire about a custom tribute piece inspired by this cane.",
-    "featured": true,
-    "quantity": 0,
-    "images": [
-      "/images/canes/masonic-tribute-cane/side.webp",
-      "/images/canes/masonic-tribute-cane/handle.webp",
-      "/images/canes/masonic-tribute-cane/detail-1.webp"
-    ]
-  },
-  {
     "id": 2,
     "slug": "senor-elegante",
     "name": "Señor Elegante",
@@ -293,7 +275,7 @@
     "id": 17,
     "slug": "thumper",
     "name": "Thumper",
-    "wood": "",
+    "wood": "Crape Myrtle Shillelagh",
     "price": 150,
     "status": "Available",
     "height": "",
@@ -310,8 +292,8 @@
   {
     "id": 18,
     "slug": "twisty",
-    "name": "Twisty",
-    "wood": "",
+    "name": "Twisty the Pimp Stick",
+    "wood": "Crape Myrtle",
     "price": 150,
     "status": "Available",
     "height": "",

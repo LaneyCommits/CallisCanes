@@ -1,57 +1,94 @@
 # CallisCanes
 
-Static React + Vite site for a handcrafted walking cane business.
+Handcrafted walking canes — static **React + Vite** site.
 
-**Content is JSON-driven** — adding a cane never requires editing React components.
+**Live:** [calliscanes.com](https://calliscanes.com/)
+
+Content is **JSON-driven**. Catalog, gallery, FAQ, homepage copy, and site settings live under `src/data/` — you usually don’t need to edit React components to change content.
 
 ## Quick start
 
 ```bash
 npm install
-cp .env.example .env   # add Formspree IDs
-npm run dev
+cp .env.example .env   # add Formspree form URLs
+npm run dev            # http://127.0.0.1:5173/
 ```
 
-## GitHub Pages (important)
+## Forms (Formspree)
 
-Keep **Branch = `main`**, but set the folder to **`/docs`** (not `/(root)`).
+Set these in `.env` (local) and `.env.production` (Pages build):
 
-In **Settings → Pages → Build and deployment**:
+| Variable | Used for |
+|----------|----------|
+| `VITE_FORMSPREE_CONTACT` | Contact page |
+| `VITE_FORMSPREE_CUSTOM_ORDER` | Custom order request |
+| `VITE_FORMSPREE_PURCHASE` | Purchase / inquire on a cane |
+| `VITE_FORMSPREE_TECH_ISSUES` | “Report a tech issue” modal |
 
-1. Source: **Deploy from a branch**
-2. Branch: **`main`** / **`/docs`**
-3. Save, wait 1–2 minutes, hard-refresh
+## Content files
 
-Custom domain **calliscanes.com**: production uses `VITE_BASE=/` (see `.env.production`). DNS must point at GitHub Pages (not Cloudflare orange-cloud proxy) for Enforce HTTPS.
+| File | Purpose |
+|------|---------|
+| `src/data/canes.json` | Collection / product catalog |
+| `src/data/gallery.json` | Gallery media |
+| `src/data/homepage.json` | Home sections |
+| `src/data/about.json` | About page |
+| `src/data/faq.json` | FAQ |
+| `src/data/customOrders.json` | Custom orders page copy |
+| `src/data/site.json` | Nav, email, social links, CTA |
+| `src/data/woodSpecies.json` | Wood options for forms |
 
-The `docs/` folder is the production build. Redeploy after content changes:
+Social links (e.g. Facebook) are in `site.json` → `social`.
+
+## Deploy (GitHub Pages)
+
+Production build is committed in **`docs/`**. Pages settings:
+
+1. **Settings → Pages → Build and deployment**
+2. Source: **Deploy from a branch**
+3. Branch: **`main`** / folder **`/docs`** (not `/(root)`)
+4. Custom domain: **`calliscanes.com`** (repo includes `public/CNAME` / `docs/CNAME`)
+
+After content or code changes:
 
 ```bash
 npm run build:pages
-git add docs && git commit -m "Update Pages build" && git push
+git add docs src public
+git commit -m "Update site"
+git push
 ```
 
-Alternatively use **`gh-pages`** branch or **GitHub Actions** (see `.github/workflows/deploy-pages.yml`).
+### Custom domain notes
+
+- Production uses `VITE_BASE=/` in `.env.production` (required for `calliscanes.com`).
+- Use `/CallisCanes/` only if hosting at `https://USER.github.io/CallisCanes/` without a custom domain.
+- For **Enforce HTTPS** on GitHub Pages, DNS must resolve to GitHub (A/AAAA + `www` CNAME). Cloudflare proxy should be **DNS only** (grey cloud), not orange-cloud proxied.
 
 ## Add a cane
 
-1. Drop photos into `incoming/<Cane Name>/` (or use `ccimg/Canes/<name>/` + `ccimg/featured/<name>/`)
-2. Convert HEIC → WebP and update JSON:
+1. Drop photos into `ccimg/Canes/<name>/` and/or `ccimg/featured/<name>/` (HEIC ok).
+2. Convert and register:
    ```bash
-   python3 -m venv .venv-img && .venv-img/bin/pip install pillow pillow-heif
+   npm run setup-img
    npm run import-canes -- ./ccimg --replace
    ```
-3. Edit `src/data/canes.json`:
-   - `status`: `Available` | `Reserved` | `Sold` | `Display` (showpiece, not for sale)
-   - `quantity`: `1` for one-of-a-kind available pieces, `0` for display
-   - `price`: number or leave blank for “Inquire”
-   - `featured`: `true` to show on the homepage
-4. Commit & push (`public/images/canes/` WebPs + `canes.json`)
+3. Tweak `src/data/canes.json` as needed:
+   - `status`: `Available` | `Reserved` | `Sold` | `Display`
+   - `quantity`: `1` for a one-of-a-kind sale piece, `0` for display
+   - `price`: number (e.g. `150`) or blank for “Inquire”
+   - `featured`: `true` for homepage
+4. Rebuild Pages and push (`public/images/canes/` + `canes.json` + `docs/`).
 
 ### Inquiry vs display
 
-| Goal | `status` | `quantity` | `featured` | What shoppers see |
-|------|----------|------------|------------|-------------------|
-| One cane for sale (3–4 photos) | `Available` | `1` | optional | “1 available” + inquire form |
-| Tribute / show only | `Display` | `0` | `true` | “Not for sale” + custom tribute CTA |
-| Sold out | `Sold` | `0` | false | Sold badge, no form |
+| Goal | `status` | `quantity` | `featured` | Shoppers see |
+|------|----------|------------|------------|--------------|
+| For sale | `Available` | `1` | optional | Price + inquire |
+| Showpiece only | `Display` | `0` | usually `true` | Not for sale + custom CTA |
+| Sold out | `Sold` | `0` | false | Sold badge |
+
+## Stack
+
+- React 18, Vite 6, React Router, Framer Motion
+- Forms via Formspree
+- Deployed from `main` → `/docs` on GitHub Pages

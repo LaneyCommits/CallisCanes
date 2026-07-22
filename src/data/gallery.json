@@ -25,6 +25,33 @@
     "image": "images/gallery/gallery-03-masonic.webp"
   },
   {
+    "id": 5,
+    "title": "Masonic Tribute — full view",
+    "category": "Featured Builds",
+    "categories": ["Featured Builds", "Finished Canes"],
+    "caption": "Full view of the Masonic Tribute cane.",
+    "type": "image",
+    "image": "images/canes/masonic-tribute-cane/side.webp"
+  },
+  {
+    "id": 6,
+    "title": "Masonic Tribute — handle",
+    "category": "Featured Builds",
+    "categories": ["Featured Builds", "Finished Canes"],
+    "caption": "Handle detail on the Masonic Tribute cane.",
+    "type": "image",
+    "image": "images/canes/masonic-tribute-cane/handle.webp"
+  },
+  {
+    "id": 7,
+    "title": "Masonic Tribute — detail",
+    "category": "Featured Builds",
+    "categories": ["Featured Builds", "Finished Canes"],
+    "caption": "Close-up detail on the Masonic Tribute cane.",
+    "type": "image",
+    "image": "images/canes/masonic-tribute-cane/detail-1.webp"
+  },
+  {
     "id": 4,
     "title": "From the shop",
     "category": "Featured Builds",

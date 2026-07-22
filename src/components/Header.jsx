@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useState, useEffect, useLayoutEffect, useCallback } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Button from './Button';
 import { getSite } from '../data';
@@ -9,9 +9,12 @@ import './Header.css';
 export default function Header() {
   const site = getSite();
   const location = useLocation();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -19,16 +22,23 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
+  // Always dismiss the drawer after any route change
+  useLayoutEffect(() => {
     setMenuOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.search, location.key]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const closeMenu = () => setMenuOpen(false);
+  const go = useCallback((to) => {
+    setMenuOpen(false);
+    if (to !== location.pathname) {
+      navigate(to);
+    }
+  }, [location.pathname, navigate]);
+
   const HeaderTag = reduceMotion ? 'header' : motion.header;
 
   return (
@@ -42,7 +52,15 @@ export default function Header() {
         })}
       >
         <div className="container header-inner">
-          <NavLink to="/" className="logo" onClick={closeMenu} aria-label={`${site.siteName} home`}>
+          <NavLink
+            to="/"
+            className="logo"
+            onClick={(e) => {
+              e.preventDefault();
+              go('/');
+            }}
+            aria-label={`${site.siteName} home`}
+          >
             <img
               className="logo-mark"
               src="/images/logo/calliscanes-logo.webp"
@@ -69,7 +87,7 @@ export default function Header() {
             <button
               type="button"
               className={`menu-toggle ${menuOpen ? 'open' : ''}`}
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => setMenuOpen((open) => !open)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
@@ -120,7 +138,14 @@ export default function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 + i * 0.04, duration: 0.35, ease: EASE_OUT }}
                 >
-                  <NavLink to={to} end={to === '/'} onClick={closeMenu}>
+                  <NavLink
+                    to={to}
+                    end={to === '/'}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      go(to);
+                    }}
+                  >
                     {label}
                   </NavLink>
                 </motion.li>
@@ -128,7 +153,15 @@ export default function Header() {
             </ul>
 
             <div className="nav-mobile-footer">
-              <Button to={site.cta.to} variant="forest" onClick={closeMenu} resin>
+              <Button
+                to={site.cta.to}
+                variant="forest"
+                resin
+                onClick={(e) => {
+                  e.preventDefault();
+                  go(site.cta.to);
+                }}
+              >
                 {site.cta.label}
               </Button>
             </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { getSite } from '../data';
 import Button from '../components/Button';
+import TechIssueModal from '../components/TechIssueModal';
 import { Reveal } from '../components/motion';
 import { submitFormspree, FORMSPREE } from '../utils/formspree';
 
@@ -9,6 +10,7 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+  const [techOpen, setTechOpen] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -67,6 +69,13 @@ export default function ContactPage() {
                   </ul>
                 </div>
               )}
+              <button
+                type="button"
+                className="tech-issue-btn"
+                onClick={() => setTechOpen(true)}
+              >
+                Report a tech issue
+              </button>
             </div>
           </Reveal>
 
@@ -103,6 +112,8 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </div>
+
+      <TechIssueModal open={techOpen} onClose={() => setTechOpen(false)} />
     </section>
   );
 }

@@ -502,6 +502,30 @@
   margin-bottom: 0.5rem;
 }
 
+.contact-info .tech-issue-btn {
+  margin-top: 1.25rem;
+}
+
+.tech-issue-btn {
+  appearance: none;
+  border: 1px solid rgba(74, 52, 40, 0.25);
+  background: transparent;
+  color: var(--walnut-brown);
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.tech-issue-btn:hover {
+  border-color: var(--forest-green);
+  background: rgba(63, 92, 69, 0.08);
+  color: var(--forest-green);
+}
+
 .reference-banner {
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;

@@ -6,7 +6,6 @@
     { "title": "Discuss details", "description": "We follow up to refine options, measurements, and finish." },
     { "title": "Receive quote", "description": "You get a clear quote and timeline before anything begins." },
     { "title": "Craft begins", "description": "The piece is shaped by hand in our workshop." },
-    { "title": "Payment", "description": "Deposit to start; balance before shipping." },
     { "title": "Shipping", "description": "Carefully packed and sent to your door." }
   ],
   "options": [

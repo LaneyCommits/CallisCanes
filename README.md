@@ -22,10 +22,12 @@ In **Settings → Pages → Build and deployment**:
 2. Branch: **`main`** / **`/docs`**
 3. Save, wait 1–2 minutes, hard-refresh
 
+Custom domain **calliscanes.com**: production uses `VITE_BASE=/` (see `.env.production`). DNS must point at GitHub Pages (not Cloudflare orange-cloud proxy) for Enforce HTTPS.
+
 The `docs/` folder is the production build. Redeploy after content changes:
 
 ```bash
-npm run build -- --outDir docs
+npm run build:pages
 git add docs && git commit -m "Update Pages build" && git push
 ```
 

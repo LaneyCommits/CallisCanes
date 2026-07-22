@@ -33,4 +33,5 @@ export const FORMSPREE = {
   contact: 'VITE_FORMSPREE_CONTACT',
   customOrder: 'VITE_FORMSPREE_CUSTOM_ORDER',
   purchase: 'VITE_FORMSPREE_PURCHASE',
+  techIssues: 'VITE_FORMSPREE_TECH_ISSUES',
 };

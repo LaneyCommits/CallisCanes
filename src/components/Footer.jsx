@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Reveal, Stagger, StaggerItem } from './motion';
 import { getSite } from '../data';
+import TechIssueModal from './TechIssueModal';
 import './Footer.css';
 
 export default function Footer() {
   const site = getSite();
   const year = new Date().getFullYear();
   const hasSocial = site.social?.instagram || site.social?.facebook;
+  const [techOpen, setTechOpen] = useState(false);
 
   return (
     <footer className="footer">
@@ -79,9 +82,14 @@ export default function Footer() {
         <Reveal variant="fade">
           <div className="footer-bottom">
             <span>&copy; {year} {site.siteName}. All rights reserved.</span>
+            <button type="button" className="footer-tech-btn" onClick={() => setTechOpen(true)}>
+              Report a tech issue
+            </button>
           </div>
         </Reveal>
       </div>
+
+      <TechIssueModal open={techOpen} onClose={() => setTechOpen(false)} />
     </footer>
   );
 }

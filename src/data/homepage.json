@@ -35,6 +35,23 @@
     "subtitle": "Workshop moments, finished builds, and close-up craftsmanship.",
     "cta": { "label": "View Gallery", "to": "/gallery" }
   },
+  "reviews": {
+    "title": "From our customers",
+    "items": [
+      {
+        "quote": "I just received this cane today from John Callis. It is a great cane, absolutely love it. Was lovingly packaged and shipped. He even called to see if I received it and if I liked it. Definitely love it, and hope to purchase again.",
+        "author": "Richard",
+        "image": "images/reviews/richard-cane.jpg",
+        "imageAlt": "Handcrafted spiral walking cane with bark and polished wood"
+      },
+      {
+        "quote": "Just want to say hi to all the followers — and especially to John Callis. I'm a 20-year Army veteran and I was looking for a personalized cane. John built this beautiful baby for me. He made a post with this cane. Well, now it's in my hands! Great page full of friends. Thank you all!!",
+        "author": "Fernando Marcano",
+        "image": "images/reviews/army-veteran-emblem.webp",
+        "imageAlt": "Army Aviation Association emblem set into a handcrafted cane"
+      }
+    ]
+  },
   "ctaBanner": {
     "title": "Ready for your own handcrafted cane?",
     "body": "Tell us about the wood you love, the trails you walk, and the story you want to carry.",

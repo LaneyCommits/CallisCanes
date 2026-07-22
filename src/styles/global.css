@@ -105,18 +105,18 @@ a:hover {
 }
 
 .section {
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
   }
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding: 5rem 0;
+    padding: 3rem 0;
   }
 }
 
@@ -134,7 +134,7 @@ a:hover {
   font-size: clamp(1rem, 2vw, 1.125rem);
   color: var(--moss-green);
   max-width: 36rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.5rem;
   text-align: center;
   line-height: 1.65;
 }

@@ -46,7 +46,7 @@ export default function HomePage() {
             <>
               <CaneGrid canes={featured} />
               <Reveal delay={0.1}>
-                <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+                <div style={{ textAlign: 'center', marginTop: '1.75rem' }}>
                   <Button to="/collection" variant="secondary">
                     View Full Collection
                   </Button>
@@ -146,6 +146,39 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {home.reviews?.items?.length > 0 && (
+        <section className="section depth-section review-section">
+          <div className="container">
+            <Reveal as="h2" className="section-title">
+              {home.reviews.title}
+            </Reveal>
+            <Stagger className="review-grid" stagger={0.08}>
+              {home.reviews.items.map((review) => (
+                <StaggerItem key={review.author}>
+                  <figure className="review-card">
+                    {review.image && (
+                      <div className="review-card-media">
+                        <img
+                          src={caneImageUrl(review.image)}
+                          alt={review.imageAlt || ''}
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <figcaption className="review-card-copy">
+                      <blockquote className="review-quote">
+                        <p>{review.quote}</p>
+                      </blockquote>
+                      <cite className="review-author">— {review.author}</cite>
+                    </figcaption>
+                  </figure>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
 
       <section className="section depth-section">
         <div className="container">

@@ -8,12 +8,12 @@
     "image": "images/gallery/gallery-01.webp"
   },
   {
-    "id": 2,
-    "title": "Workshop lineup",
-    "category": "Workshop",
-    "caption": "Five finished pieces laid out for sizing and comparison.",
+    "id": 8,
+    "title": "Spalted maple with walnut handle",
+    "category": "Finished Canes",
+    "caption": "",
     "type": "image",
-    "image": "images/gallery/gallery-02.webp"
+    "image": "images/gallery/gallery-finished-01-spalted.webp"
   },
   {
     "id": 3,
@@ -23,6 +23,14 @@
     "caption": "The Masonic Tribute cane — a showpiece on display.",
     "type": "image",
     "image": "images/gallery/gallery-03-masonic.webp"
+  },
+  {
+    "id": 9,
+    "title": "Red cedar spiral",
+    "category": "Finished Canes",
+    "caption": "",
+    "type": "image",
+    "image": "images/gallery/gallery-finished-02-red-cedar.webp"
   },
   {
     "id": 5,
@@ -50,6 +58,46 @@
     "caption": "Close-up detail on the Masonic Tribute cane.",
     "type": "image",
     "image": "images/canes/masonic-tribute-cane/detail-1.webp"
+  },
+  {
+    "id": 10,
+    "title": "Bark spiral cane",
+    "category": "Finished Canes",
+    "caption": "",
+    "type": "image",
+    "image": "images/gallery/gallery-finished-03-bark-spiral.webp"
+  },
+  {
+    "id": 11,
+    "title": "Spalted hickory with black walnut handle",
+    "category": "Finished Canes",
+    "caption": "",
+    "type": "image",
+    "image": "images/gallery/gallery-finished-04-spiral-outdoor.webp"
+  },
+  {
+    "id": 12,
+    "title": "Natural knob cane",
+    "category": "Finished Canes",
+    "caption": "",
+    "type": "image",
+    "image": "images/gallery/gallery-finished-05-natural-knob.webp"
+  },
+  {
+    "id": 2,
+    "title": "Workshop lineup",
+    "category": "Workshop",
+    "caption": "Five finished pieces laid out for sizing and comparison.",
+    "type": "image",
+    "image": "images/gallery/gallery-02.webp"
+  },
+  {
+    "id": 13,
+    "title": "Handle in progress",
+    "category": "Workshop",
+    "caption": "Carving a cane handle by hand — bark and grain still showing.",
+    "type": "image",
+    "image": "images/gallery/gallery-workshop-handle.webp"
   },
   {
     "id": 4,

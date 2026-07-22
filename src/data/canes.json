@@ -1,0 +1,328 @@
+[
+  {
+    "id": 1,
+    "slug": "masonic-tribute-cane",
+    "name": "Masonic Tribute Cane",
+    "wood": "",
+    "price": "",
+    "status": "Display",
+    "height": "",
+    "finish": "",
+    "description": "Featured showpiece \u2014 on display, not for sale. Inquire about a custom tribute piece inspired by this cane.",
+    "featured": true,
+    "quantity": 0,
+    "images": [
+      "/images/canes/masonic-tribute-cane/side.webp",
+      "/images/canes/masonic-tribute-cane/handle.webp",
+      "/images/canes/masonic-tribute-cane/detail-1.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "senor-elegante",
+    "name": "Se\u00f1or Elegante",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/senor-elegante/cover.webp",
+      "/images/canes/senor-elegante/side.webp",
+      "/images/canes/senor-elegante/handle.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "bison",
+    "name": "Bison",
+    "wood": "",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bison/cover.webp",
+      "/images/canes/bison/side.webp",
+      "/images/canes/bison/handle.webp",
+      "/images/canes/bison/detail-1.webp"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "blacky-cm-cane",
+    "name": "Blacky CM Cane",
+    "wood": "",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/blacky-cm-cane/cover.webp",
+      "/images/canes/blacky-cm-cane/side.webp",
+      "/images/canes/blacky-cm-cane/handle.webp"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "bones",
+    "name": "Bones",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bones/cover.webp",
+      "/images/canes/bones/side.webp",
+      "/images/canes/bones/handle.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "bonker",
+    "name": "Bonker",
+    "wood": "",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bonker/cover.webp",
+      "/images/canes/bonker/side.webp",
+      "/images/canes/bonker/handle.webp"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "bp-tung-oil",
+    "name": "BP Tung Oil",
+    "wood": "Bradford Pear",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bp-tung-oil/cover.webp",
+      "/images/canes/bp-tung-oil/side.webp",
+      "/images/canes/bp-tung-oil/handle.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "bradley-oaks",
+    "name": "Bradley Oaks",
+    "wood": "Spalted Oak / Bradford Pear",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": true,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bradley-oaks/cover.webp",
+      "/images/canes/bradley-oaks/side.webp",
+      "/images/canes/bradley-oaks/handle.webp"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "crate-mert-shillelagh",
+    "name": "Crate Mert Shillelagh",
+    "wood": "Crape Myrtle handle / Black Walnut shaft",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/crate-mert-shillelagh/cover.webp",
+      "/images/canes/crate-mert-shillelagh/side.webp",
+      "/images/canes/crate-mert-shillelagh/handle.webp"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "mace",
+    "name": "Mace",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/mace/cover.webp",
+      "/images/canes/mace/side.webp",
+      "/images/canes/mace/handle.webp"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "raven",
+    "name": "Raven",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/raven/cover.webp",
+      "/images/canes/raven/side.webp",
+      "/images/canes/raven/handle.webp"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "one-piece-plum-shillelagh",
+    "name": "One-Piece Plum Shillelagh",
+    "wood": "Plum",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/one-piece-plum-shillelagh/cover.webp",
+      "/images/canes/one-piece-plum-shillelagh/side.webp",
+      "/images/canes/one-piece-plum-shillelagh/handle.webp"
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "pecan-scales",
+    "name": "Pecan Scales",
+    "wood": "Pecan",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/pecan-scales/cover.webp",
+      "/images/canes/pecan-scales/side.webp",
+      "/images/canes/pecan-scales/handle.webp",
+      "/images/canes/pecan-scales/detail-1.webp"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "pelican",
+    "name": "Pelican",
+    "wood": "Crape Myrtle",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/pelican/handle.webp",
+      "/images/canes/pelican/cover.webp",
+      "/images/canes/pelican/side.webp"
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "squidward",
+    "name": "Squidward",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": true,
+    "quantity": 1,
+    "images": [
+      "/images/canes/squidward/cover.webp",
+      "/images/canes/squidward/side.webp",
+      "/images/canes/squidward/handle.webp"
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "swagger-stick",
+    "name": "Swagger Stick",
+    "wood": "",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/swagger-stick/cover.webp",
+      "/images/canes/swagger-stick/side.webp",
+      "/images/canes/swagger-stick/handle.webp"
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "thumper",
+    "name": "Thumper",
+    "wood": "",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/thumper/cover.webp",
+      "/images/canes/thumper/side.webp",
+      "/images/canes/thumper/handle.webp"
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "twisty",
+    "name": "Twisty",
+    "wood": "",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/twisty/cover.webp",
+      "/images/canes/twisty/side.webp",
+      "/images/canes/twisty/handle.webp"
+    ]
+  }
+]

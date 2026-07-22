@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "question": "How long does a custom order take?",
+    "answer": "Most custom orders are completed within 4–8 weeks, depending on wood selection, complexity, and our current queue. We will provide an estimated timeline when we review your request."
+  },
+  {
+    "id": 2,
+    "question": "What types of wood do you work with?",
+    "answer": "We primarily work with oak, spruce, walnut, cherry, and maple — each selected for its character, strength, and natural beauty. Much of our wood is sourced from local farms in Middle Georgia. Seasonal and specialty woods may also be available."
+  },
+  {
+    "id": 3,
+    "question": "Do you offer engraving?",
+    "answer": "Yes. Names, dates, short inscriptions, and simple motifs can often be carved or engraved into the piece. Share what you have in mind on the custom order form."
+  },
+  {
+    "id": 4,
+    "question": "How does payment work?",
+    "answer": "We typically request a deposit to begin a custom order, with the balance due before shipping. Available collection pieces can be reserved with a deposit after we confirm the sale."
+  },
+  {
+    "id": 5,
+    "question": "Do you ship?",
+    "answer": "Yes. Each cane is carefully packaged to arrive safely. Shipping costs and timelines vary by destination. We ship within the U.S. and can discuss international orders on request."
+  },
+  {
+    "id": 6,
+    "question": "What is your return policy?",
+    "answer": "Because each piece is handcrafted — and custom orders are made to your specifications — returns are limited. If something arrives damaged, contact us right away and we will make it right."
+  },
+  {
+    "id": 7,
+    "question": "How should I care for my cane?",
+    "answer": "Wipe with a soft dry cloth after use. Avoid prolonged soaking or harsh cleaners. A light coat of natural oil or wax once or twice a year helps protect the finish. Keep out of extreme heat when possible."
+  },
+  {
+    "id": 8,
+    "question": "Can I choose specific dimensions?",
+    "answer": "Absolutely. We tailor every cane to your height, grip preference, and intended use. Share your measurements in the custom order form and we will guide you through the process."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "title": "Custom Orders",
+  "intro": "Commission a cane made for you — from locally sourced wood, shaped by hand in Middle Georgia.",
+  "timeline": [
+    { "title": "Submit request", "description": "Share how you will use the cane, preferred wood, height, and any details that matter." },
+    { "title": "Discuss details", "description": "We follow up to refine options, measurements, and finish." },
+    { "title": "Receive quote", "description": "You get a clear quote and timeline before anything begins." },
+    { "title": "Craft begins", "description": "The piece is shaped by hand in our workshop." },
+    { "title": "Payment", "description": "Deposit to start; balance before shipping." },
+    { "title": "Shipping", "description": "Carefully packed and sent to your door." }
+  ],
+  "options": [
+    "Wood species from local and specialty stock",
+    "Height and grip tailored to you",
+    "Finish and detailing (oil, wax, engraving)",
+    "Inspired by a piece in the Collection, or fully original"
+  ]
+}

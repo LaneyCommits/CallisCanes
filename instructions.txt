@@ -1,0 +1,79 @@
+CallisCanes — Static Site Instructions
+======================================
+
+Stack: React + Vite · JSON content · Formspree · GitHub Pages
+
+
+QUICK START
+-----------
+
+  1. npm install
+  2. Copy .env.example to .env and add Formspree form IDs
+  3. npm run dev
+  4. Open http://localhost:5173
+
+
+CONTENT
+-------
+
+  All copy and products live in src/data/:
+
+    canes.json        Product catalog
+    gallery.json      Gallery images
+    faq.json          FAQ accordion
+    homepage.json     Home sections
+    woodSpecies.json  Wood options for forms
+    site.json         Nav, contact, social
+    about.json        About page
+    customOrders.json Custom order page copy
+
+  Adding a new cane (no React edits):
+
+    1. Drop a folder of photos into ./incoming/<Cane Name>/
+    2. npm run import-canes
+    3. Fill in wood, price, description in canes.json
+    4. Commit and push
+
+
+IMAGES
+------
+
+  Stored at: public/images/canes/<slug>/cover.webp …
+
+  JSON image paths look like:
+    "/images/canes/the-appalachian/cover.webp"
+
+
+FORMS (Formspree)
+-----------------
+
+  Set in .env:
+
+    VITE_FORMSPREE_CONTACT=xxxxx
+    VITE_FORMSPREE_CUSTOM_ORDER=xxxxx
+    VITE_FORMSPREE_PURCHASE=xxxxx
+
+
+DEPLOY (GitHub Pages)
+---------------------
+
+  For project pages (https://USER.github.io/CallisCanes/):
+
+    Add to .env:
+      VITE_BASE=/CallisCanes/
+
+  Then:
+
+    npm run deploy
+
+  Or build only: npm run build  (output in dist/)
+
+
+SCRIPTS
+-------
+
+  npm run dev           Local development
+  npm run build         Production build
+  npm run preview       Preview production build
+  npm run deploy        Build + publish to gh-pages
+  npm run import-canes  Import photo folders from ./incoming

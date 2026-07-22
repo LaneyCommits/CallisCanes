@@ -1,0 +1,24 @@
+{
+  "siteName": "CallisCanes",
+  "tagline": "Every cane has a story.",
+  "email": "calliscanes@gmail.com",
+  "phone": "",
+  "address": "",
+  "social": {
+    "instagram": "",
+    "facebook": ""
+  },
+  "nav": [
+    { "to": "/", "label": "Home" },
+    { "to": "/collection", "label": "Collection" },
+    { "to": "/gallery", "label": "Gallery" },
+    { "to": "/about", "label": "About" },
+    { "to": "/faq", "label": "FAQ" },
+    { "to": "/contact", "label": "Contact" }
+  ],
+  "cta": {
+    "label": "Request a Custom Cane",
+    "to": "/custom-orders"
+  },
+  "metaDescription": "CallisCanes — Handcrafted walking canes carved from natural wood. Every cane has a story."
+}

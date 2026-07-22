@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Spiral shaft detail",
+    "category": "Finished Canes",
+    "caption": "A high-gloss spiral cane with spalted maple character in the handle.",
+    "type": "image",
+    "image": "images/gallery/gallery-01.webp"
+  },
+  {
+    "id": 2,
+    "title": "Workshop lineup",
+    "category": "Workshop",
+    "caption": "Five finished pieces laid out for sizing and comparison.",
+    "type": "image",
+    "image": "images/gallery/gallery-02.webp"
+  },
+  {
+    "id": 3,
+    "title": "Masonic Tribute",
+    "category": "Featured Builds",
+    "caption": "The Masonic Tribute cane — a showpiece on display.",
+    "type": "image",
+    "image": "images/gallery/gallery-03-masonic.webp"
+  },
+  {
+    "id": 4,
+    "title": "From the shop",
+    "category": "Featured Builds",
+    "caption": "A finished cane outside the workshop.",
+    "type": "video",
+    "image": "images/gallery/gallery-video-poster.webp",
+    "video": "videos/workshop.mp4"
+  }
+]

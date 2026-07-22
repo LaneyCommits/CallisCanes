@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "headline": "Every cane has a story.",
+    "subheading": "Each cane is handcrafted from locally sourced hardwood, showcasing the natural beauty and unique character of every piece.",
+    "primaryCta": { "label": "Browse Collection", "to": "/collection" },
+    "secondaryCta": { "label": "Request a Custom Cane", "to": "/custom-orders" },
+    "image": "/images/hero/hero.webp"
+  },
+  "features": [
+    {
+      "title": "Locally Sourced Hardwood",
+      "description": "Wood from local farms and land in Middle Georgia — chosen for character, strength, and story."
+    },
+    {
+      "title": "Handcrafted",
+      "description": "Every curve follows the grain. Shaped, sanded, and finished by hand in a family workshop."
+    },
+    {
+      "title": "One of a Kind",
+      "description": "No two canes are alike. Each piece carries the unique voice of its timber."
+    }
+  ],
+  "featuredSection": {
+    "title": "Featured Collection",
+    "subtitle": "Here are some featured pieces from our collection."
+  },
+  "aboutPreview": {
+    "title": "About CallisCanes",
+    "body": "A family owned business in Middle GA.",
+    "image": "images/about/about-01.webp",
+    "cta": { "label": "Learn More", "to": "/about" }
+  },
+  "galleryPreview": {
+    "title": "From the Gallery",
+    "subtitle": "Workshop moments, finished builds, and close-up craftsmanship.",
+    "cta": { "label": "View Gallery", "to": "/gallery" }
+  },
+  "ctaBanner": {
+    "title": "Ready for your own handcrafted cane?",
+    "body": "Tell us about the wood you love, the trails you walk, and the story you want to carry.",
+    "cta": { "label": "Request a Custom Cane", "to": "/custom-orders" }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "calliscanes",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist",
+    "import-canes": "node scripts/import-cane-images.mjs",
+    "setup-img": "python3 -m venv .venv-img && .venv-img/bin/pip install pillow pillow-heif"
+  },
+  "dependencies": {
+    "framer-motion": "^11.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.3.0",
+    "sharp": "^0.33.5",
+    "vite": "^6.0.3"
+  }
+}

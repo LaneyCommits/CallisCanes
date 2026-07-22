@@ -1,0 +1,219 @@
+.cane-card {
+  width: 100%;
+  height: 100%;
+}
+
+.cane-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.3s ease;
+}
+
+.cane-card-link:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.cane-card-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, var(--sage), var(--walnut-brown));
+  overflow: hidden;
+}
+
+.cane-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cane-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, var(--sage), var(--walnut-brown));
+}
+
+.status-badge {
+  position: absolute;
+  top: 0.45rem;
+  left: 0.45rem;
+  z-index: 1;
+  padding: 0.25rem 0.45rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--cream);
+  color: var(--walnut-brown);
+}
+
+.status-badge--available {
+  background: var(--forest-green);
+  color: var(--cream);
+}
+
+.status-badge--reserved {
+  background: var(--antique-gold);
+  color: var(--walnut-brown);
+}
+
+.status-badge--sold {
+  background: #6b4a4a;
+  color: var(--cream);
+}
+
+.status-badge--display {
+  background: var(--antique-gold);
+  color: var(--walnut-brown);
+}
+
+.cane-card-body {
+  padding: 0.7rem 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.15rem;
+}
+
+.cane-card-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--walnut-brown);
+  margin-bottom: 0;
+  line-height: 1.25;
+}
+
+.cane-card-wood {
+  font-size: 0.68rem;
+  color: var(--moss-green);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.45rem;
+  line-height: 1.35;
+}
+
+.cane-card-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.cane-card-price {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--antique-gold);
+}
+
+.cane-card-cta {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--forest-green);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+.cane-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cane-grid-item {
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .cane-grid {
+    gap: 1rem;
+  }
+
+  .cane-card-body {
+    padding: 0.85rem 0.95rem 1rem;
+  }
+
+  .cane-card-title {
+    font-size: 1.05rem;
+  }
+
+  .cane-card-wood {
+    font-size: 0.72rem;
+  }
+
+  .status-badge {
+    top: 0.55rem;
+    left: 0.55rem;
+    font-size: 0.62rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .cane-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .cane-card-link {
+    border-radius: var(--radius-lg);
+  }
+
+  .cane-card-body {
+    padding: 1rem 1.1rem 1.2rem;
+  }
+
+  .cane-card-title {
+    font-size: 1.2rem;
+  }
+
+  .cane-card-wood {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cane-card-price {
+    font-size: 0.95rem;
+  }
+
+  .cane-card-cta {
+    font-size: 0.75rem;
+  }
+
+  .status-badge {
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cane-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+  }
+
+  .cane-card-title {
+    font-size: 1.35rem;
+  }
+
+  .cane-card-body {
+    padding: 1.15rem 1.25rem 1.35rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cane-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

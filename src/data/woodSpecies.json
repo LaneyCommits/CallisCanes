@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Black Walnut", "slug": "black-walnut", "notes": "" },
+  { "id": 2, "name": "Oak", "slug": "oak", "notes": "" },
+  { "id": 3, "name": "Maple", "slug": "maple", "notes": "" },
+  { "id": 4, "name": "Cherry", "slug": "cherry", "notes": "" },
+  { "id": 5, "name": "Mahogany", "slug": "mahogany", "notes": "" },
+  { "id": 6, "name": "Spruce", "slug": "spruce", "notes": "" },
+  { "id": 7, "name": "Burl Wood", "slug": "burl-wood", "notes": "" },
+  { "id": 8, "name": "Chinese Privet", "slug": "chinese-privet", "notes": "" }
+]

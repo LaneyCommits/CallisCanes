@@ -184,66 +184,6 @@
   color: var(--moss-green);
 }
 
-.timeline-step {
-  padding: 1.25rem;
-  position: relative;
-  width: 100%;
-  flex: 1;
-  min-height: 11.5rem;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.timeline-step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  margin-bottom: 0.75rem;
-  border-radius: 50%;
-  background: var(--forest-green);
-  color: var(--cream);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.timeline-step h3 {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--walnut-brown);
-  margin-bottom: 0.4rem;
-}
-
-.timeline-step p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--charcoal);
-  line-height: 1.55;
-}
-
-.custom-options {
-  padding: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.custom-options h3 {
-  font-family: var(--font-serif);
-  margin-bottom: 0.75rem;
-  color: var(--walnut-brown);
-}
-
-.custom-options ul {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.custom-options li {
-  margin-bottom: 0.4rem;
-  line-height: 1.5;
-}
-
 .about-topics {
   display: grid;
   gap: 1.25rem;

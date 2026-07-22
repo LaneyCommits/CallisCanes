@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getCustomOrders, getCaneBySlug, getWoodSpecies } from '../data';
 import Button from '../components/Button';
-import TimelineCarousel from '../components/TimelineCarousel';
 import { Reveal } from '../components/motion';
 import { submitFormspree, FORMSPREE } from '../utils/formspree';
 
@@ -67,22 +66,6 @@ export default function CustomOrdersPage() {
           <div className="page-intro">
             <h1 className="section-title">{content.title}</h1>
             <p className="section-subtitle">{content.intro}</p>
-          </div>
-        </Reveal>
-
-        <Reveal as="h2" className="section-title" style={{ fontSize: '1.5rem' }}>
-          How it works
-        </Reveal>
-        <TimelineCarousel steps={content.timeline} />
-
-        <Reveal>
-          <div className="custom-options depth-card">
-            <h3>Available options</h3>
-            <ul>
-              {content.options.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
           </div>
         </Reveal>
 

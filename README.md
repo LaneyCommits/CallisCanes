@@ -14,23 +14,22 @@ npm run dev
 
 ## GitHub Pages (important)
 
-The live site must publish the **built** app, not the `main` source files.
+Keep **Branch = `main`**, but set the folder to **`/docs`** (not `/(root)`).
 
 In **Settings → Pages → Build and deployment**:
 
 1. Source: **Deploy from a branch**
-2. Branch: **`gh-pages`** / **`/` (root)**  ← not `main`
-3. Save, wait a minute, hard-refresh
+2. Branch: **`main`** / **`/docs`**
+3. Save, wait 1–2 minutes, hard-refresh
 
-Or set Source to **GitHub Actions** (workflow: `.github/workflows/deploy-pages.yml`).
-
-Deploy manually:
+The `docs/` folder is the production build. Redeploy after content changes:
 
 ```bash
-npm run deploy
+npm run build -- --outDir docs
+git add docs && git commit -m "Update Pages build" && git push
 ```
 
-See [instructions.txt](instructions.txt) for Formspree and image import details.
+Alternatively use **`gh-pages`** branch or **GitHub Actions** (see `.github/workflows/deploy-pages.yml`).
 
 ## Add a cane
 

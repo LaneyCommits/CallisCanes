@@ -7,11 +7,13 @@ import site from '../data/site.json';
 import about from '../data/about.json';
 import customOrders from '../data/customOrders.json';
 
-/** Resolve a cane image path from JSON (public or imported asset path string). */
+/** Resolve a public asset path, respecting Vite base (e.g. /CallisCanes/ on GitHub Pages). */
 export function caneImageUrl(path) {
   if (!path) return null;
-  if (path.startsWith('http') || path.startsWith('/')) return path;
-  return `/${path.replace(/^\.\//, '')}`;
+  if (path.startsWith('http')) return path;
+  const base = import.meta.env.BASE_URL || '/';
+  const clean = String(path).replace(/^\.\//, '').replace(/^\//, '');
+  return `${base}${clean}`;
 }
 
 export function getCoverImage(cane) {

@@ -12,7 +12,25 @@ cp .env.example .env   # add Formspree IDs
 npm run dev
 ```
 
-See [instructions.txt](instructions.txt) for deploy, Formspree, and image import details.
+## GitHub Pages (important)
+
+The live site must publish the **built** app, not the `main` source files.
+
+In **Settings → Pages → Build and deployment**:
+
+1. Source: **Deploy from a branch**
+2. Branch: **`gh-pages`** / **`/` (root)**  ← not `main`
+3. Save, wait a minute, hard-refresh
+
+Or set Source to **GitHub Actions** (workflow: `.github/workflows/deploy-pages.yml`).
+
+Deploy manually:
+
+```bash
+npm run deploy
+```
+
+See [instructions.txt](instructions.txt) for Formspree and image import details.
 
 ## Add a cane
 

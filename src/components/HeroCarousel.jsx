@@ -1,9 +1,11 @@
 import Button from './Button';
 import { RevealOnMount } from './motion';
+import { caneImageUrl } from '../data';
 import './HeroCarousel.css';
 
 export default function HomeHero({ hero }) {
   if (!hero) return null;
+  const heroImage = caneImageUrl(hero.image);
 
   return (
     <section className="home-hero" aria-label="Hero">
@@ -26,9 +28,9 @@ export default function HomeHero({ hero }) {
         </RevealOnMount>
       </div>
 
-      <div className="home-hero-visual" aria-hidden={!hero.image}>
-        {hero.image ? (
-          <img src={hero.image} alt="" className="home-hero-image-main" />
+      <div className="home-hero-visual" aria-hidden={!heroImage}>
+        {heroImage ? (
+          <img src={heroImage} alt="" className="home-hero-image-main" />
         ) : (
           <div className="home-hero-visual--fallback" />
         )}

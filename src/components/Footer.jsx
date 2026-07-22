@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Reveal, Stagger, StaggerItem } from './motion';
-import { getSite } from '../data';
+import { getSite, caneImageUrl } from '../data';
 import TechIssueModal from './TechIssueModal';
 import './Footer.css';
 
@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="footer-brand">
               <img
                 className="logo-mark"
-                src="/images/logo/calliscanes-logo.webp"
+                src={caneImageUrl('images/logo/calliscanes-logo.webp')}
                 alt=""
                 width={112}
                 height={112}

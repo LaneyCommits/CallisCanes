@@ -2,7 +2,7 @@ import { useState, useEffect, useLayoutEffect, useCallback } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Button from './Button';
-import { getSite } from '../data';
+import { getSite, caneImageUrl } from '../data';
 import { EASE_OUT } from './motion/easing';
 import './Header.css';
 
@@ -63,7 +63,7 @@ export default function Header() {
           >
             <img
               className="logo-mark"
-              src="/images/logo/calliscanes-logo.webp"
+              src={caneImageUrl('images/logo/calliscanes-logo.webp')}
               alt=""
               width={56}
               height={56}

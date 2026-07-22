@@ -4,7 +4,6 @@ import Button from './Button';
 import ContactFields, {
   CONTACT_DEFAULTS,
   validateContact,
-  isHoneypotFilled,
   contactPayload,
 } from './ContactFields';
 import { submitFormspree, FORMSPREE } from '../utils/formspree';
@@ -42,13 +41,6 @@ export default function TechIssueModal({ open, onClose }) {
     e.preventDefault();
     setSubmitting(true);
     setStatus(null);
-
-    if (isHoneypotFilled(form)) {
-      setStatus({ type: 'success', message: 'Thanks — your report was sent.' });
-      setForm(empty);
-      setSubmitting(false);
-      return;
-    }
 
     const contactError = validateContact(form);
     if (contactError) {

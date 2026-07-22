@@ -2,7 +2,7 @@ export const CONTACT_DEFAULTS = {
   email: '',
   phone: '',
   preferredContact: 'email',
-  // Obscure honeypot name — "website" gets autofilled by browsers/password managers
+  // Obscure name — never use "website"/"url" (browsers autofill those)
   cc_hp_field: '',
 };
 
@@ -26,17 +26,16 @@ export function validateContact(form) {
   return null;
 }
 
-/** Bots fill hidden fields — treat as spam and skip the real submit. */
-export function isHoneypotFilled(form) {
-  return Boolean(form.cc_hp_field?.trim());
-}
-
-/** Strip honeypot and map it to Formspree’s `_gotcha` field. */
+/**
+ * Build Formspree payload fields for contact info.
+ * Honeypot is mapped to `_gotcha` (Formspree drops filled traps server-side).
+ * Never short-circuit with a fake success — that blocked real users when autofill hit the old field.
+ */
 export function contactPayload(form) {
   const { cc_hp_field, ...rest } = form;
   return {
     ...rest,
-    _gotcha: cc_hp_field || '',
+    _gotcha: typeof cc_hp_field === 'string' ? cc_hp_field : '',
   };
 }
 
@@ -63,8 +62,12 @@ export default function ContactFields({ form, onChange, idPrefix = '' }) {
           onChange={onChange}
           tabIndex={-1}
           autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
           data-lpignore="true"
           data-1p-ignore="true"
+          data-bwignore="true"
           data-form-type="other"
         />
       </div>

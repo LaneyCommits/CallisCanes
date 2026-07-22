@@ -5,7 +5,6 @@ import TechIssueModal from '../components/TechIssueModal';
 import ContactFields, {
   CONTACT_DEFAULTS,
   validateContact,
-  isHoneypotFilled,
   contactPayload,
 } from '../components/ContactFields';
 import { Reveal } from '../components/motion';
@@ -31,13 +30,6 @@ export default function ContactPage() {
     e.preventDefault();
     setSubmitting(true);
     setStatus(null);
-
-    if (isHoneypotFilled(form)) {
-      setStatus({ type: 'success', message: 'Message sent — thank you for reaching out.' });
-      setForm(empty);
-      setSubmitting(false);
-      return;
-    }
 
     const contactError = validateContact(form);
     if (contactError) {

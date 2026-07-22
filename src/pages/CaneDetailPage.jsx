@@ -6,7 +6,6 @@ import ProductMediaGallery from '../components/ProductMediaGallery';
 import ContactFields, {
   CONTACT_DEFAULTS,
   validateContact,
-  isHoneypotFilled,
   contactPayload,
 } from '../components/ContactFields';
 import { submitFormspree, FORMSPREE } from '../utils/formspree';
@@ -171,12 +170,6 @@ function PurchaseRequestForm({ cane, onClose }) {
     e.preventDefault();
     setSubmitting(true);
     setStatus(null);
-
-    if (isHoneypotFilled(form)) {
-      setStatus({ type: 'success', message: 'Thank you — we will follow up soon.' });
-      setSubmitting(false);
-      return;
-    }
 
     const contactError = validateContact(form);
     if (contactError) {

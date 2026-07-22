@@ -5,7 +5,6 @@ import Button from '../components/Button';
 import ContactFields, {
   CONTACT_DEFAULTS,
   validateContact,
-  isHoneypotFilled,
   contactPayload,
 } from '../components/ContactFields';
 import { Reveal } from '../components/motion';
@@ -48,13 +47,6 @@ export default function CustomOrdersPage() {
     e.preventDefault();
     setSubmitting(true);
     setStatus(null);
-
-    if (isHoneypotFilled(form)) {
-      setStatus({ type: 'success', message: 'Request received — we will be in touch soon.' });
-      setForm(empty);
-      setSubmitting(false);
-      return;
-    }
 
     const contactError = validateContact(form);
     if (contactError) {

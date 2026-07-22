@@ -21,7 +21,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Hard-close on every navigation — no exit animation that can linger
+  // Close after the route changes — never unmount the link mid-tap on mobile
   useLayoutEffect(() => {
     setMenuOpen(false);
     document.body.style.overflow = '';
@@ -50,7 +50,6 @@ export default function Header() {
             to="/"
             end
             className="logo"
-            onClick={closeMenu}
             aria-label={`${site.siteName} home`}
           >
             <img
@@ -90,54 +89,43 @@ export default function Header() {
         </div>
       </HeaderTag>
 
-      {menuOpen && (
-        <button
-          type="button"
-          className="nav-overlay open"
-          aria-label="Close menu"
-          onClick={closeMenu}
-        />
-      )}
+      <button
+        type="button"
+        className={`nav-overlay${menuOpen ? ' is-open' : ''}`}
+        aria-label="Close menu"
+        tabIndex={menuOpen ? 0 : -1}
+        onClick={closeMenu}
+      />
 
-      {menuOpen && (
-        <nav
-          id="mobile-nav"
-          className="nav-mobile open"
-          aria-label="Mobile navigation"
-        >
-          <div className="nav-mobile-header">
-            <span className="nav-mobile-title">Menu</span>
-            <button type="button" className="nav-mobile-close" onClick={closeMenu} aria-label="Close menu">
-              &times;
-            </button>
-          </div>
+      <nav
+        id="mobile-nav"
+        className={`nav-mobile${menuOpen ? ' is-open' : ''}`}
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
+      >
+        <div className="nav-mobile-header">
+          <span className="nav-mobile-title">Menu</span>
+          <button type="button" className="nav-mobile-close" onClick={closeMenu} aria-label="Close menu">
+            &times;
+          </button>
+        </div>
 
-          <ul className="nav-mobile-links">
-            {site.nav.map(({ to, label }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  end={to === '/'}
-                  onClick={closeMenu}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+        <ul className="nav-mobile-links">
+          {site.nav.map(({ to, label }) => (
+            <li key={to}>
+              <NavLink to={to} end={to === '/'}>
+                {label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
 
-          <div className="nav-mobile-footer">
-            <Button
-              to={site.cta.to}
-              variant="forest"
-              resin
-              onClick={closeMenu}
-            >
-              {site.cta.label}
-            </Button>
-          </div>
-        </nav>
-      )}
+        <div className="nav-mobile-footer">
+          <Button to={site.cta.to} variant="forest" resin>
+            {site.cta.label}
+          </Button>
+        </div>
+      </nav>
     </>
   );
 }

@@ -143,7 +143,16 @@
   width: 100%;
   background: rgba(45, 52, 36, 0.45);
   cursor: pointer;
-  animation: nav-overlay-in 0.2s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .nav-mobile {
@@ -158,23 +167,22 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: nav-drawer-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
 }
 
-@keyframes nav-overlay-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes nav-drawer-in {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+.nav-mobile.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .nav-overlay,
   .nav-mobile {
-    animation: none;
+    transition: none;
   }
 }
 

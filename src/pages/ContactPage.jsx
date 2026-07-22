@@ -2,12 +2,25 @@ import { useState } from 'react';
 import { getSite } from '../data';
 import Button from '../components/Button';
 import TechIssueModal from '../components/TechIssueModal';
+import ContactFields, {
+  CONTACT_DEFAULTS,
+  validateContact,
+  isHoneypotFilled,
+  contactPayload,
+} from '../components/ContactFields';
 import { Reveal } from '../components/motion';
 import { submitFormspree, FORMSPREE } from '../utils/formspree';
 
+const empty = {
+  name: '',
+  ...CONTACT_DEFAULTS,
+  subject: '',
+  message: '',
+};
+
 export default function ContactPage() {
   const site = getSite();
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [form, setForm] = useState(empty);
   const [status, setStatus] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [techOpen, setTechOpen] = useState(false);
@@ -18,13 +31,32 @@ export default function ContactPage() {
     e.preventDefault();
     setSubmitting(true);
     setStatus(null);
+
+    if (isHoneypotFilled(form)) {
+      setStatus({ type: 'success', message: 'Message sent — thank you for reaching out.' });
+      setForm(empty);
+      setSubmitting(false);
+      return;
+    }
+
+    const contactError = validateContact(form);
+    if (contactError) {
+      setStatus({ type: 'error', message: contactError });
+      setSubmitting(false);
+      return;
+    }
+
     try {
+      const { name, subject, message, ...contact } = form;
       await submitFormspree(FORMSPREE.contact, {
-        ...form,
-        _subject: form.subject || 'Contact form',
+        name,
+        subject,
+        message,
+        ...contactPayload(contact),
+        _subject: subject || 'Contact form',
       });
       setStatus({ type: 'success', message: 'Message sent — thank you for reaching out.' });
-      setForm({ name: '', email: '', subject: '', message: '' });
+      setForm(empty);
     } catch (err) {
       setStatus({ type: 'error', message: err.message });
     } finally {
@@ -91,10 +123,7 @@ export default function ContactPage() {
                   <label htmlFor="name">Name</label>
                   <input id="name" name="name" value={form.name} onChange={handleChange} required autoComplete="name" />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input id="email" name="email" type="email" value={form.email} onChange={handleChange} required autoComplete="email" />
-                </div>
+                <ContactFields form={form} onChange={handleChange} />
                 <div className="form-group">
                   <label htmlFor="subject">Subject</label>
                   <input id="subject" name="subject" value={form.subject} onChange={handleChange} required />

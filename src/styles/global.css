@@ -200,6 +200,18 @@ a:hover {
   }
 }
 
+/* Hidden honeypot — bots fill it; real users never see it */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .form-group {
   margin-bottom: 1.25rem;
 }

@@ -3,6 +3,12 @@ import { useParams, Link } from 'react-router-dom';
 import { getCaneBySlug, formatPrice } from '../data';
 import Button from '../components/Button';
 import ProductMediaGallery from '../components/ProductMediaGallery';
+import ContactFields, {
+  CONTACT_DEFAULTS,
+  validateContact,
+  isHoneypotFilled,
+  contactPayload,
+} from '../components/ContactFields';
 import { submitFormspree, FORMSPREE } from '../utils/formspree';
 import '../components/CaneMedia.css';
 import '../components/CaneCard.css';
@@ -153,8 +159,7 @@ export default function CaneDetailPage() {
 function PurchaseRequestForm({ cane, onClose }) {
   const [form, setForm] = useState({
     name: '',
-    email: '',
-    phone: '',
+    ...CONTACT_DEFAULTS,
     message: `I am interested in purchasing "${cane.name}".`,
   });
   const [status, setStatus] = useState(null);
@@ -166,9 +171,26 @@ function PurchaseRequestForm({ cane, onClose }) {
     e.preventDefault();
     setSubmitting(true);
     setStatus(null);
+
+    if (isHoneypotFilled(form)) {
+      setStatus({ type: 'success', message: 'Thank you — we will follow up soon.' });
+      setSubmitting(false);
+      return;
+    }
+
+    const contactError = validateContact(form);
+    if (contactError) {
+      setStatus({ type: 'error', message: contactError });
+      setSubmitting(false);
+      return;
+    }
+
     try {
+      const { name, message, ...contact } = form;
       await submitFormspree(FORMSPREE.purchase, {
-        ...form,
+        name,
+        message,
+        ...contactPayload(contact),
         _subject: `Purchase request: ${cane.name}`,
         cane: cane.name,
         slug: cane.slug,
@@ -203,14 +225,7 @@ function PurchaseRequestForm({ cane, onClose }) {
         <label htmlFor="purchase-name">Name</label>
         <input id="purchase-name" name="name" value={form.name} onChange={handleChange} required autoComplete="name" />
       </div>
-      <div className="form-group">
-        <label htmlFor="purchase-email">Email</label>
-        <input id="purchase-email" name="email" type="email" value={form.email} onChange={handleChange} required autoComplete="email" />
-      </div>
-      <div className="form-group">
-        <label htmlFor="purchase-phone">Phone (optional)</label>
-        <input id="purchase-phone" name="phone" type="tel" value={form.phone} onChange={handleChange} autoComplete="tel" />
-      </div>
+      <ContactFields form={form} onChange={handleChange} idPrefix="purchase-" />
       <div className="form-group">
         <label htmlFor="purchase-message">Message</label>
         <textarea id="purchase-message" name="message" value={form.message} onChange={handleChange} required />

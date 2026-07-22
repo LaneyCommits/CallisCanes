@@ -4,7 +4,8 @@
     "subheading": "Each cane is handcrafted from locally sourced hardwood, showcasing the natural beauty and unique character of every piece.",
     "primaryCta": { "label": "Browse Collection", "to": "/collection" },
     "secondaryCta": { "label": "Request a Custom Cane", "to": "/custom-orders" },
-    "image": "images/hero/hero.webp"
+    "image": "images/hero/hero.webp",
+    "video": "videos/hero.mp4"
   },
   "features": [
     {

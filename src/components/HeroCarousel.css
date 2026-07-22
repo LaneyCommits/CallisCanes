@@ -72,6 +72,11 @@
   height: 100%;
   object-fit: cover;
   object-position: center 28%;
+  display: block;
+}
+
+.home-hero-visual video.home-hero-image-main {
+  object-position: center center;
 }
 
 .home-hero-visual-fade {
@@ -161,5 +166,54 @@
 @media (min-width: 1024px) {
   .home-hero-copy {
     flex: 0 0 42%;
+  }
+}
+
+/*
+ * Cap hero height so the video panel doesn’t dominate the page.
+ * Phones keep a shorter full-bleed hero; split layouts get a firm max.
+ */
+@media (max-width: 767px) {
+  .home-hero {
+    min-height: calc(78vh - var(--header-height));
+    min-height: calc(78dvh - var(--header-height));
+  }
+}
+
+@media (min-width: 768px) {
+  .home-hero {
+    min-height: 0;
+    height: min(calc(100dvh - var(--header-height)), 32rem);
+    max-height: 32rem;
+  }
+
+  .home-hero-copy {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .home-hero-visual {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .home-hero {
+    height: min(calc(100dvh - var(--header-height)), 34rem);
+    max-height: 34rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-hero {
+    height: min(calc(100dvh - var(--header-height)), 36rem);
+    max-height: 36rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-hero {
+    height: min(calc(100dvh - var(--header-height)), 38rem);
+    max-height: 38rem;
   }
 }

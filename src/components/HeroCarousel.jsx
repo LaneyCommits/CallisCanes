@@ -6,6 +6,7 @@ import './HeroCarousel.css';
 export default function HomeHero({ hero }) {
   if (!hero) return null;
   const heroImage = caneImageUrl(hero.image);
+  const heroVideo = caneImageUrl(hero.video);
 
   return (
     <section className="home-hero" aria-label="Hero">
@@ -28,8 +29,19 @@ export default function HomeHero({ hero }) {
         </RevealOnMount>
       </div>
 
-      <div className="home-hero-visual" aria-hidden={!heroImage}>
-        {heroImage ? (
+      <div className="home-hero-visual" aria-hidden={!(heroVideo || heroImage)}>
+        {heroVideo ? (
+          <video
+            className="home-hero-image-main"
+            src={heroVideo}
+            poster={heroImage || undefined}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+        ) : heroImage ? (
           <img src={heroImage} alt="" className="home-hero-image-main" />
         ) : (
           <div className="home-hero-visual--fallback" />

@@ -19,6 +19,7 @@
     "id": 3,
     "title": "Masonic Tribute",
     "category": "Featured Builds",
+    "categories": ["Featured Builds", "Finished Canes"],
     "caption": "The Masonic Tribute cane — a showpiece on display.",
     "type": "image",
     "image": "images/gallery/gallery-03-masonic.webp"

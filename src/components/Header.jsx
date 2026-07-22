@@ -1,5 +1,5 @@
 import { useState, useEffect, useLayoutEffect, useCallback } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Button from './Button';
 import { getSite, caneImageUrl } from '../data';
@@ -9,7 +9,6 @@ import './Header.css';
 export default function Header() {
   const site = getSite();
   const location = useLocation();
-  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -25,19 +24,13 @@ export default function Header() {
   // Always dismiss the drawer after any route change
   useLayoutEffect(() => {
     setMenuOpen(false);
+    window.scrollTo(0, 0);
   }, [location.pathname, location.search, location.key]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
-
-  const go = useCallback((to) => {
-    setMenuOpen(false);
-    if (to !== location.pathname) {
-      navigate(to);
-    }
-  }, [location.pathname, navigate]);
 
   const HeaderTag = reduceMotion ? 'header' : motion.header;
 
@@ -54,11 +47,9 @@ export default function Header() {
         <div className="container header-inner">
           <NavLink
             to="/"
+            end
             className="logo"
-            onClick={(e) => {
-              e.preventDefault();
-              go('/');
-            }}
+            onClick={closeMenu}
             aria-label={`${site.siteName} home`}
           >
             <img
@@ -141,10 +132,7 @@ export default function Header() {
                   <NavLink
                     to={to}
                     end={to === '/'}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      go(to);
-                    }}
+                    onClick={closeMenu}
                   >
                     {label}
                   </NavLink>
@@ -157,10 +145,7 @@ export default function Header() {
                 to={site.cta.to}
                 variant="forest"
                 resin
-                onClick={(e) => {
-                  e.preventDefault();
-                  go(site.cta.to);
-                }}
+                onClick={closeMenu}
               >
                 {site.cta.label}
               </Button>

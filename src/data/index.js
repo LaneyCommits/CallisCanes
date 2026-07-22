@@ -45,9 +45,18 @@ export function getGallery() {
   return gallery;
 }
 
-export function getGalleryCategories() {
-  return [...new Set(gallery.map((g) => g.category).filter(Boolean))];
+function galleryCategoriesFor(item) {
+  if (Array.isArray(item.categories) && item.categories.length) {
+    return item.categories.filter(Boolean);
+  }
+  return item.category ? [item.category] : [];
 }
+
+export function getGalleryCategories() {
+  return [...new Set(gallery.flatMap(galleryCategoriesFor))];
+}
+
+export { galleryCategoriesFor };
 
 export function getFaqs() {
   return faq;

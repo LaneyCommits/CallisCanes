@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Button from './Button';
 import { submitFormspree, FORMSPREE } from '../utils/formspree';
+import './TechIssueModal.css';
 
-const empty = { name: '', email: '', page: '', message: '' };
+const empty = { name: '', email: '', message: '' };
 
 export default function TechIssueModal({ open, onClose }) {
   const [form, setForm] = useState(empty);
@@ -11,10 +13,8 @@ export default function TechIssueModal({ open, onClose }) {
 
   useEffect(() => {
     if (!open) return undefined;
-    setForm((prev) => ({
-      ...prev,
-      page: prev.page || (typeof window !== 'undefined' ? window.location.href : ''),
-    }));
+    setStatus(null);
+    setForm(empty);
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
@@ -24,7 +24,7 @@ export default function TechIssueModal({ open, onClose }) {
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!open || typeof document === 'undefined') return null;
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -35,6 +35,7 @@ export default function TechIssueModal({ open, onClose }) {
     try {
       await submitFormspree(FORMSPREE.techIssues, {
         ...form,
+        page: typeof window !== 'undefined' ? window.location.href : '',
         _subject: 'Tech issue report',
       });
       setStatus({ type: 'success', message: 'Thanks — your report was sent.' });
@@ -46,11 +47,11 @@ export default function TechIssueModal({ open, onClose }) {
     }
   };
 
-  return (
-    <div className="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="tech-issue-title">
-      <button type="button" className="inquiry-modal-backdrop" aria-label="Close" onClick={onClose} />
-      <div className="inquiry-modal-panel">
-        <button type="button" className="inquiry-modal-close" onClick={onClose} aria-label="Close">
+  return createPortal(
+    <div className="tech-modal" role="dialog" aria-modal="true" aria-labelledby="tech-issue-title">
+      <button type="button" className="tech-modal-backdrop" aria-label="Close" onClick={onClose} />
+      <div className="tech-modal-panel depth-card">
+        <button type="button" className="tech-modal-close" onClick={onClose} aria-label="Close">
           &times;
         </button>
 
@@ -63,9 +64,9 @@ export default function TechIssueModal({ open, onClose }) {
             </Button>
           </div>
         ) : (
-          <form className="cane-inquiry" onSubmit={handleSubmit}>
+          <form className="tech-modal-form" onSubmit={handleSubmit}>
             <h2 id="tech-issue-title">Report a tech issue</h2>
-            <p className="cane-inquiry-lead">
+            <p className="tech-modal-lead">
               Something broken on the site? Tell us what happened and where.
             </p>
             <div className="form-group">
@@ -92,16 +93,6 @@ export default function TechIssueModal({ open, onClose }) {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="tech-page">Page URL</label>
-              <input
-                id="tech-page"
-                name="page"
-                value={form.page}
-                onChange={handleChange}
-                placeholder="https://"
-              />
-            </div>
-            <div className="form-group">
               <label htmlFor="tech-message">What went wrong?</label>
               <textarea
                 id="tech-message"
@@ -119,6 +110,7 @@ export default function TechIssueModal({ open, onClose }) {
           </form>
         )}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

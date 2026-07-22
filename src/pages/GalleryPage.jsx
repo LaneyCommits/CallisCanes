@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getGallery, getGalleryCategories, caneImageUrl } from '../data';
+import { getGallery, getGalleryCategories, galleryCategoriesFor, caneImageUrl } from '../data';
 import { Reveal } from '../components/motion';
 
 function isVideo(item) {
@@ -14,7 +14,7 @@ export default function GalleryPage() {
 
   const filtered = filter === 'All'
     ? items
-    : items.filter((i) => i.category === filter);
+    : items.filter((i) => galleryCategoriesFor(i).includes(filter));
 
   useEffect(() => {
     if (!lightbox) return undefined;

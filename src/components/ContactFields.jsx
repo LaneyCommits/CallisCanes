@@ -2,7 +2,8 @@ export const CONTACT_DEFAULTS = {
   email: '',
   phone: '',
   preferredContact: 'email',
-  website: '', // honeypot — leave empty
+  // Obscure honeypot name — "website" gets autofilled by browsers/password managers
+  cc_hp_field: '',
 };
 
 export const PREFERRED_CONTACT_OPTIONS = [
@@ -27,15 +28,15 @@ export function validateContact(form) {
 
 /** Bots fill hidden fields — treat as spam and skip the real submit. */
 export function isHoneypotFilled(form) {
-  return Boolean(form.website?.trim());
+  return Boolean(form.cc_hp_field?.trim());
 }
 
 /** Strip honeypot and map it to Formspree’s `_gotcha` field. */
 export function contactPayload(form) {
-  const { website, ...rest } = form;
+  const { cc_hp_field, ...rest } = form;
   return {
     ...rest,
-    _gotcha: website || '',
+    _gotcha: cc_hp_field || '',
   };
 }
 
@@ -48,20 +49,23 @@ export default function ContactFields({ form, onChange, idPrefix = '' }) {
   const emailId = `${idPrefix}email`;
   const phoneId = `${idPrefix}phone`;
   const preferredId = `${idPrefix}preferredContact`;
-  const honeypotId = `${idPrefix}website`;
+  const honeypotId = `${idPrefix}cc_hp_field`;
 
   return (
     <>
       <div className="form-honeypot" aria-hidden="true">
-        <label htmlFor={honeypotId}>Website</label>
+        <label htmlFor={honeypotId}>Leave blank</label>
         <input
           id={honeypotId}
-          name="website"
+          name="cc_hp_field"
           type="text"
-          value={form.website}
+          value={form.cc_hp_field}
           onChange={onChange}
           tabIndex={-1}
           autoComplete="off"
+          data-lpignore="true"
+          data-1p-ignore="true"
+          data-form-type="other"
         />
       </div>
 

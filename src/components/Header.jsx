@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useCallback } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Button from './Button';
 import { getSite, caneImageUrl } from '../data';
 import { EASE_OUT } from './motion/easing';
@@ -21,9 +21,10 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Dismiss drawer immediately on route change so it never sits over the next page
+  // Hard-close on every navigation — no exit animation that can linger
   useLayoutEffect(() => {
     setMenuOpen(false);
+    document.body.style.overflow = '';
     window.scrollTo(0, 0);
   }, [location.pathname, location.search, location.key]);
 
@@ -89,72 +90,54 @@ export default function Header() {
         </div>
       </HeaderTag>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            key="nav-overlay"
-            className="nav-overlay open"
-            onClick={closeMenu}
-            aria-hidden="true"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0 } }}
-            transition={{ duration: 0.2 }}
-          />
-        )}
-      </AnimatePresence>
+      {menuOpen && (
+        <button
+          type="button"
+          className="nav-overlay open"
+          aria-label="Close menu"
+          onClick={closeMenu}
+        />
+      )}
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.nav
-            key="mobile-nav"
-            id="mobile-nav"
-            className="nav-mobile open"
-            aria-label="Mobile navigation"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%', transition: { duration: 0 } }}
-            transition={{ duration: 0.35, ease: EASE_OUT }}
-          >
-            <div className="nav-mobile-header">
-              <span className="nav-mobile-title">Menu</span>
-              <button type="button" className="nav-mobile-close" onClick={closeMenu} aria-label="Close menu">
-                &times;
-              </button>
-            </div>
+      {menuOpen && (
+        <nav
+          id="mobile-nav"
+          className="nav-mobile open"
+          aria-label="Mobile navigation"
+        >
+          <div className="nav-mobile-header">
+            <span className="nav-mobile-title">Menu</span>
+            <button type="button" className="nav-mobile-close" onClick={closeMenu} aria-label="Close menu">
+              &times;
+            </button>
+          </div>
 
-            <ul className="nav-mobile-links">
-              {site.nav.map(({ to, label }, i) => (
-                <motion.li
-                  key={to}
-                  initial={reduceMotion ? false : { opacity: 0, x: 24 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + i * 0.04, duration: 0.35, ease: EASE_OUT }}
+          <ul className="nav-mobile-links">
+            {site.nav.map(({ to, label }) => (
+              <li key={to}>
+                <NavLink
+                  to={to}
+                  end={to === '/'}
+                  onClick={closeMenu}
                 >
-                  <NavLink
-                    to={to}
-                    end={to === '/'}
-                    onClick={closeMenu}
-                  >
-                    {label}
-                  </NavLink>
-                </motion.li>
-              ))}
-            </ul>
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
 
-            <div className="nav-mobile-footer">
-              <Button
-                to={site.cta.to}
-                variant="forest"
-                resin
-                onClick={closeMenu}
-              >
-                {site.cta.label}
-              </Button>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+          <div className="nav-mobile-footer">
+            <Button
+              to={site.cta.to}
+              variant="forest"
+              resin
+              onClick={closeMenu}
+            >
+              {site.cta.label}
+            </Button>
+          </div>
+        </nav>
+      )}
     </>
   );
 }

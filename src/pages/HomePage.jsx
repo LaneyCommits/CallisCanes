@@ -16,10 +16,10 @@ export default function HomePage() {
   const [playingId, setPlayingId] = useState(null);
 
   return (
-    <>
+    <div className="home-page">
       <HomeHero hero={home.hero} />
 
-      <section className="section depth-section">
+      <section className="section depth-section section-band section-band--alt">
         <div className="container">
           <Stagger className="feature-grid" stagger={0.08}>
             {home.features.map((f) => (
@@ -34,7 +34,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section featured-canes-section depth-section">
+      <section className="section featured-canes-section depth-section section-band section-band--featured">
         <div className="container">
           <Reveal as="h2" className="section-title" variant="up">
             {home.featuredSection.title}
@@ -59,7 +59,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section depth-section">
+      <section className="section depth-section section-band">
         <div className="container">
           <div className="about-preview">
             <Reveal>
@@ -82,7 +82,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section depth-section">
+      <section className="section depth-section section-band section-band--alt">
         <div className="container">
           <Reveal as="h2" className="section-title">
             {home.galleryPreview.title}
@@ -148,7 +148,7 @@ export default function HomePage() {
       </section>
 
       {home.reviews?.items?.length > 0 && (
-        <section className="section depth-section review-section">
+        <section className="section depth-section review-section section-band">
           <div className="container">
             <Reveal as="h2" className="section-title">
               {home.reviews.title}
@@ -180,7 +180,7 @@ export default function HomePage() {
         </section>
       )}
 
-      <section className="section depth-section">
+      <section className="section depth-section section-band section-band--alt">
         <div className="container">
           <Reveal>
             <div className="cta-banner">
@@ -193,6 +193,6 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -2,8 +2,21 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
-  margin: 2rem 0;
+  margin: 0;
   align-items: stretch;
+}
+
+/* Homepage — alternate section backgrounds for clearer separation */
+.home-page .section-band {
+  background-color: var(--section-surface);
+}
+
+.home-page .section-band--alt {
+  background-color: var(--section-surface-alt);
+}
+
+.home-page .section-band--featured {
+  background-color: var(--section-surface-muted);
 }
 
 .feature-grid > * {
@@ -132,7 +145,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -186,8 +199,12 @@
   aspect-ratio: 1;
 }
 
+.review-section {
+  padding-top: 0.5rem;
+}
+
 .review-section .section-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .review-grid {
@@ -209,15 +226,6 @@
 
   .review-card-media {
     max-height: 160px;
-  }
-
-  .review-quote p {
-    font-size: 0.88rem;
-    line-height: 1.4;
-  }
-
-  .review-author {
-    font-size: 0.75rem;
   }
 
   .review-card-copy {
@@ -266,9 +274,9 @@
 .review-quote p {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: clamp(0.7rem, 0.55rem + 0.75vw, 1.05rem);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--walnut-brown);
 }
 
@@ -283,7 +291,7 @@
 .review-author {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: clamp(0.65rem, 0.5rem + 0.45vw, 0.85rem);
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0.04em;

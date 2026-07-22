@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CallisCanes</title>
     <script>
-      // GitHub Pages SPA fallback: redirect to index with path in query
+      // GitHub Pages has no real SPA rewrite — bounce through / and restore the path.
       sessionStorage.redirect = location.href;
+      location.replace(location.origin + '/');
     </script>
-    <meta http-equiv="refresh" content="0;URL='./index.html'" />
+    <meta http-equiv="refresh" content="0; url=/" />
   </head>
   <body></body>
 </html>

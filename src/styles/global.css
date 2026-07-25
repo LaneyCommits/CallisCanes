@@ -200,7 +200,7 @@ a:hover {
   }
 }
 
-/* Hidden honeypot — bots fill it; real users never see it */
+/* Hidden honeypot - bots fill it; real users never see it */
 .form-honeypot {
   position: absolute;
   left: -10000px;
@@ -214,6 +214,37 @@ a:hover {
 
 .form-group {
   margin-bottom: 1.25rem;
+}
+
+.form-fieldset {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.form-legend {
+  display: block;
+  width: 100%;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--walnut-brown);
+  margin: 0.25rem 0 1rem;
+  padding: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 560px) {
+  .form-row {
+    grid-template-columns: 1.4fr 0.8fr 0.8fr;
+    gap: 0.75rem;
+  }
 }
 
 .form-group label {

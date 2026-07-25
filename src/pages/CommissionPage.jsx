@@ -13,12 +13,27 @@ import { submitFormspree, FORMSPREE } from '../utils/formspree';
 const empty = {
   name: '',
   ...CONTACT_DEFAULTS,
+  address: '',
+  address2: '',
+  city: '',
+  state: '',
+  zip: '',
   height: '',
   preferredWood: '',
   handleStyle: '',
   engraving: '',
+  budget: '',
   notes: '',
 };
+
+const BUDGET_OPTIONS = [
+  'Under $150',
+  '$150 - $200',
+  '$200 - $300',
+  '$300 - $500',
+  '$500+',
+  'Flexible / not sure',
+];
 
 export default function CustomOrdersPage() {
   const content = getCustomOrders();
@@ -57,20 +72,38 @@ export default function CustomOrdersPage() {
 
     try {
       const {
-        name, height, preferredWood, handleStyle, engraving, notes, ...contact
-      } = form;
-      await submitFormspree(FORMSPREE.customOrder, {
         name,
+        address,
+        address2,
+        city,
+        state,
+        zip,
         height,
         preferredWood,
         handleStyle,
         engraving,
+        budget,
+        notes,
+        ...contact
+      } = form;
+      await submitFormspree(FORMSPREE.customOrder, {
+        name,
+        address,
+        address2,
+        city,
+        state,
+        zip,
+        height,
+        preferredWood,
+        handleStyle,
+        engraving,
+        budget,
         notes,
         ...contactPayload(contact),
         _subject: 'Custom order request',
         referenceCane: reference?.name || '',
       });
-      setStatus({ type: 'success', message: 'Request received — we will be in touch soon.' });
+      setStatus({ type: 'success', message: "Request received - we'll be in touch soon." });
       setForm(empty);
     } catch (err) {
       setStatus({ type: 'error', message: err.message });
@@ -114,6 +147,65 @@ export default function CustomOrdersPage() {
               <input id="name" name="name" value={form.name} onChange={handleChange} required autoComplete="name" />
             </div>
             <ContactFields form={form} onChange={handleChange} />
+            <fieldset className="form-fieldset">
+              <legend className="form-legend">Shipping address</legend>
+              <div className="form-group">
+                <label htmlFor="address">Street address</label>
+                <input
+                  id="address"
+                  name="address"
+                  value={form.address}
+                  onChange={handleChange}
+                  required
+                  autoComplete="shipping address-line1"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="address2">Apt, suite, etc. (optional)</label>
+                <input
+                  id="address2"
+                  name="address2"
+                  value={form.address2}
+                  onChange={handleChange}
+                  autoComplete="shipping address-line2"
+                />
+              </div>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="city">City</label>
+                  <input
+                    id="city"
+                    name="city"
+                    value={form.city}
+                    onChange={handleChange}
+                    required
+                    autoComplete="shipping address-level2"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="state">State</label>
+                  <input
+                    id="state"
+                    name="state"
+                    value={form.state}
+                    onChange={handleChange}
+                    required
+                    autoComplete="shipping address-level1"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="zip">ZIP</label>
+                  <input
+                    id="zip"
+                    name="zip"
+                    value={form.zip}
+                    onChange={handleChange}
+                    required
+                    autoComplete="shipping postal-code"
+                  />
+                </div>
+              </div>
+            </fieldset>
             <div className="form-group">
               <label htmlFor="height">Height</label>
               <input id="height" name="height" value={form.height} onChange={handleChange} placeholder='e.g. 36"' />
@@ -137,8 +229,17 @@ export default function CustomOrdersPage() {
               <input id="engraving" name="engraving" value={form.engraving} onChange={handleChange} placeholder="Optional text or motif" />
             </div>
             <div className="form-group">
+              <label htmlFor="budget">Budget</label>
+              <select id="budget" name="budget" value={form.budget} onChange={handleChange}>
+                <option value="">Select...</option>
+                {BUDGET_OPTIONS.map((opt) => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
+              </select>
+            </div>
+            <div className="form-group">
               <label htmlFor="notes">Notes</label>
-              <textarea id="notes" name="notes" value={form.notes} onChange={handleChange} required placeholder="Tell us about your vision..." />
+              <textarea id="notes" name="notes" value={form.notes} onChange={handleChange} required placeholder="Tell us what you're dreamin' up..." />
             </div>
             {status?.type === 'error' && <p className="error-state">{status.message}</p>}
             <Button type="submit" variant="primary" size="lg" disabled={submitting}>

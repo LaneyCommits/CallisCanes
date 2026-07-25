@@ -34,7 +34,7 @@ export default function GalleryPage() {
           <div className="page-intro">
             <h1 className="section-title">Gallery</h1>
             <p className="section-subtitle">
-              Workshop photos, finished canes, customer pieces, featured builds, and close-up craftsmanship.
+              Workshop photos, finished canes, customer pieces, featured builds, and close-up craftsmanship from the shop.
             </p>
           </div>
         </Reveal>

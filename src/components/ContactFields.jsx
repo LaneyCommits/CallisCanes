@@ -2,7 +2,7 @@ export const CONTACT_DEFAULTS = {
   email: '',
   phone: '',
   preferredContact: 'email',
-  // Obscure name — never use "website"/"url" (browsers autofill those)
+  // Obscure name - never use "website"/"url" (browsers autofill those)
   cc_hp_field: '',
 };
 
@@ -29,7 +29,7 @@ export function validateContact(form) {
 /**
  * Build Formspree payload fields for contact info.
  * Honeypot is mapped to `_gotcha` (Formspree drops filled traps server-side).
- * Never short-circuit with a fake success — that blocked real users when autofill hit the old field.
+ * Never short-circuit with a fake success - that blocked real users when autofill hit the old field.
  */
 export function contactPayload(form) {
   const { cc_hp_field, ...rest } = form;

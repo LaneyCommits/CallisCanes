@@ -1,0 +1,13 @@
+{
+  "title": "Cane Height Guide",
+  "intro": "Use this chart as a starting point. The best fit is usually from the floor to your wrist crease when your arm hangs naturally at your side. If an available cane is too long, we can shorten it to fit you. Just mention the length you need in the purchase inquiry form.",
+  "rows": [
+    { "personHeight": "Under 5'0\"", "caneLength": "28\" - 30\"" },
+    { "personHeight": "5'0\" - 5'3\"", "caneLength": "31\" - 33\"" },
+    { "personHeight": "5'4\" - 5'7\"", "caneLength": "34\" - 36\"" },
+    { "personHeight": "5'8\" - 5'11\"", "caneLength": "37\" - 39\"" },
+    { "personHeight": "6'0\" - 6'3\"", "caneLength": "40\" - 42\"" },
+    { "personHeight": "6'4\" and taller", "caneLength": "43\"+" }
+  ],
+  "note": "If you're between sizes, go with the longer cane. Tip: stand tall in the shoes you walk in most, arms relaxed, and measure to the wrist crease."
+}

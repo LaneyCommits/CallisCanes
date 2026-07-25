@@ -47,7 +47,7 @@ export default function ContactPage() {
         ...contactPayload(contact),
         _subject: subject || 'Contact form',
       });
-      setStatus({ type: 'success', message: 'Message sent — thank you for reaching out.' });
+      setStatus({ type: 'success', message: "Message sent - much obliged for reachin' out." });
       setForm(empty);
     } catch (err) {
       setStatus({ type: 'error', message: err.message });

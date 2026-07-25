@@ -6,6 +6,7 @@ import woodSpecies from '../data/woodSpecies.json';
 import site from '../data/site.json';
 import about from '../data/about.json';
 import customOrders from '../data/customOrders.json';
+import heightGuide from '../data/heightGuide.json';
 
 /** Resolve a public asset path, respecting Vite base (e.g. /CallisCanes/ on GitHub Pages). */
 export function caneImageUrl(path) {
@@ -80,4 +81,8 @@ export function getAbout() {
 
 export function getCustomOrders() {
   return customOrders;
+}
+
+export function getHeightGuide() {
+  return heightGuide;
 }

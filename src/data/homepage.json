@@ -1,16 +1,17 @@
 {
   "hero": {
-    "headline": "Every cane has a story.",
-    "subheading": "Each cane is handcrafted from locally sourced hardwood, showcasing the natural beauty and unique character of every piece.",
-    "primaryCta": { "label": "Browse Collection", "to": "/collection" },
+    "headline": "Every cane's got a story.",
+    "subheading": "Handcrafted from locally sourced hardwood down here in Middle Georgia, showin' off the natural beauty and character of every piece.",
+    "primaryCta": { "label": "Browse the Collection", "to": "/collection" },
     "secondaryCta": { "label": "Request a Custom Cane", "to": "/custom-orders" },
     "image": "images/hero/hero.webp",
+    "mobileImage": "images/gallery/gallery-01.webp",
     "video": "videos/hero.mp4"
   },
   "features": [
     {
       "title": "Locally Sourced Hardwood",
-      "description": "Wood from local farms and land in Middle Georgia."
+      "description": "Wood pulled from local farms and land right here in Middle Georgia."
     },
     {
       "title": "Handcrafted",
@@ -18,16 +19,16 @@
     },
     {
       "title": "One of a Kind",
-      "description": "No two canes are alike. Each piece carries the unique voice of its timber."
+      "description": "No two canes are alike, y'all. Each piece carries the unique voice of its timber."
     }
   ],
   "featuredSection": {
     "title": "Featured Collection",
-    "subtitle": "Here are some featured pieces from our collection."
+    "subtitle": "A few of our favorite pieces sittin' pretty."
   },
   "aboutPreview": {
     "title": "About CallisCanes",
-    "body": "A family owned business in Middle GA.",
+    "body": "A family-owned outfit right here in Middle GA.",
     "image": "images/about/about-02.webp",
     "cta": { "label": "Learn More", "to": "/about" }
   },
@@ -37,7 +38,7 @@
     "cta": { "label": "View Gallery", "to": "/gallery" }
   },
   "reviews": {
-    "title": "From our customers",
+    "title": "Kind words from folks",
     "items": [
       {
         "quote": "I just received this cane today from John Callis. It is a great cane, absolutely love it. Was lovingly packaged and shipped. He even called to see if I received it and if I liked it. Definitely love it, and hope to purchase again.",
@@ -46,7 +47,7 @@
         "imageAlt": "Handcrafted spiral walking cane with bark and polished wood"
       },
       {
-        "quote": "Just want to say hi to all the followers — and especially to John Callis. I'm a 20-year Army veteran and I was looking for a personalized cane. John built this beautiful baby for me. He made a post with this cane. Well, now it's in my hands! Great page full of friends. Thank you all!!",
+        "quote": "Just want to say hi to all the followers - and especially to John Callis. I'm a 20-year Army veteran and I was looking for a personalized cane. John built this beautiful baby for me. He made a post with this cane. Well, now it's in my hands! Great page full of friends. Thank you all!!",
         "author": "Fernando Marcano",
         "image": "images/reviews/army-veteran-emblem.webp",
         "imageAlt": "Army Aviation Association emblem set into a handcrafted cane"
@@ -54,8 +55,8 @@
     ]
   },
   "ctaBanner": {
-    "title": "Ready for your own handcrafted cane?",
-    "body": "Tell us about the wood you love, the trails you walk, and the story you want to carry.",
+    "title": "Ready for a cane of your own?",
+    "body": "Tell us about the wood you love, the trails you're walkin', and the story you want to carry.",
     "cta": { "label": "Request a Custom Cane", "to": "/custom-orders" }
   }
 }

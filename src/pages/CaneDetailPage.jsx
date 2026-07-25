@@ -100,7 +100,7 @@ export default function CaneDetailPage() {
                   : isSold
                     ? 'Sold'
                     : cane.quantity === 1
-                      ? '1 available — inquire to purchase'
+                      ? '1 available - inquire to purchase'
                       : (cane.status || 'Available')}
               </dd>
             </dl>
@@ -188,7 +188,7 @@ function PurchaseRequestForm({ cane, onClose }) {
         cane: cane.name,
         slug: cane.slug,
       });
-      setStatus({ type: 'success', message: 'Thank you — we will follow up soon.' });
+      setStatus({ type: 'success', message: "Thank you - we'll follow up soon." });
     } catch (err) {
       setStatus({ type: 'error', message: err.message });
     } finally {
@@ -212,7 +212,8 @@ function PurchaseRequestForm({ cane, onClose }) {
     <form className="cane-inquiry" onSubmit={handleSubmit}>
       <h2 id="inquiry-modal-title">Purchase Inquiry</h2>
       <p className="cane-inquiry-lead">
-        Only one of these is available. Send a note to inquire — we will confirm price and next steps.
+        Only one of these is available. If it is too long, tell us the cane length you need in
+        your message and we can shorten it to fit. We will confirm the price and next steps.
       </p>
       <div className="form-group">
         <label htmlFor="purchase-name">Name</label>

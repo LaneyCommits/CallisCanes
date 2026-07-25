@@ -6,7 +6,7 @@
   align-items: stretch;
 }
 
-/* Homepage — alternate section backgrounds for clearer separation */
+/* Homepage - alternate section backgrounds for clearer separation */
 .home-page .section-band {
   background-color: var(--section-surface);
 }
@@ -634,4 +634,88 @@
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.height-guide-prompt {
+  text-align: center;
+  margin: 0.75rem auto 0;
+  max-width: 36rem;
+  color: var(--moss-green);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.height-guide-link {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--forest-green);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+
+.height-guide-link:hover {
+  color: var(--walnut-brown);
+}
+
+.height-guide-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.height-guide-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--walnut-brown);
+  margin: 0 2rem 0.75rem 0;
+}
+
+.height-guide-intro {
+  color: var(--moss-green);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.height-guide-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.height-guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.height-guide-table th,
+.height-guide-table td {
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid rgba(74, 52, 40, 0.15);
+}
+
+.height-guide-table th {
+  font-weight: 600;
+  color: var(--walnut-brown);
+  background: rgba(247, 243, 235, 0.9);
+}
+
+.height-guide-table td {
+  color: var(--charcoal);
+}
+
+.height-guide-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.height-guide-note {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--moss-green);
+  margin-bottom: 1.25rem;
 }

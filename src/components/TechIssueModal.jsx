@@ -58,7 +58,7 @@ export default function TechIssueModal({ open, onClose }) {
         page: typeof window !== 'undefined' ? window.location.href : '',
         _subject: 'Tech issue report',
       });
-      setStatus({ type: 'success', message: 'Thanks — your report was sent.' });
+      setStatus({ type: 'success', message: 'Thanks - your report was sent.' });
       setForm(empty);
     } catch (err) {
       setStatus({ type: 'error', message: err.message });

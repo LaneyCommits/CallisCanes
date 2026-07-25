@@ -75,6 +75,10 @@
   display: block;
 }
 
+.home-hero-image-main--mobile {
+  object-position: center 35%;
+}
+
 .home-hero-visual video.home-hero-image-main {
   object-position: center center;
 }

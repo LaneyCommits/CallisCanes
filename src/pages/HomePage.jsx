@@ -48,7 +48,7 @@ export default function HomePage() {
               <Reveal delay={0.1}>
                 <div style={{ textAlign: 'center', marginTop: '1.75rem' }}>
                   <Button to="/collection" variant="secondary">
-                    View Full Collection
+                    See the Whole Collection
                   </Button>
                 </div>
               </Reveal>
@@ -170,7 +170,7 @@ export default function HomePage() {
                       <blockquote className="review-quote">
                         <p>{review.quote}</p>
                       </blockquote>
-                      <cite className="review-author">— {review.author}</cite>
+                      <cite className="review-author">- {review.author}</cite>
                     </figcaption>
                   </figure>
                 </StaggerItem>

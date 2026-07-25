@@ -1,10 +1,10 @@
 # CallisCanes
 
-Handcrafted walking canes — static **React + Vite** site.
+Handcrafted walking canes - static **React + Vite** site.
 
 **Live:** [calliscanes.com](https://calliscanes.com/)
 
-Content is **JSON-driven**. Catalog, gallery, FAQ, homepage copy, and site settings live under `src/data/` — you usually don’t need to edit React components to change content.
+Content is **JSON-driven**. Catalog, gallery, FAQ, homepage copy, and site settings live under `src/data/` - you usually don’t need to edit React components to change content.
 
 ## Quick start
 

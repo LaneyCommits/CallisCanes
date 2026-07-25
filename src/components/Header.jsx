@@ -21,7 +21,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close after the route changes — never unmount the link mid-tap on mobile
+  // Close after the route changes - never unmount the link mid-tap on mobile
   useLayoutEffect(() => {
     setMenuOpen(false);
     document.body.style.overflow = '';

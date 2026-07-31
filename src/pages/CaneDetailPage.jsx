@@ -79,12 +79,6 @@ export default function CaneDetailPage() {
                   <dd>{cane.wood}</dd>
                 </>
               )}
-              {cane.height && (
-                <>
-                  <dt>Height</dt>
-                  <dd>{cane.height}</dd>
-                </>
-              )}
               {cane.finish && (
                 <>
                   <dt>Finish</dt>
@@ -103,6 +97,12 @@ export default function CaneDetailPage() {
                       ? '1 available - inquire to purchase'
                       : (cane.status || 'Available')}
               </dd>
+              {cane.height && (
+                <>
+                  <dt>Height</dt>
+                  <dd>{cane.height}</dd>
+                </>
+              )}
             </dl>
 
             {canPurchase && (

@@ -51,9 +51,11 @@ export default function CaneCard({ cane }) {
             <span className="cane-card-cta">
               {isDisplay
                 ? 'View'
-                : qty === 1
-                  ? '1 available'
-                  : 'View Details'}
+                : cane.status === 'Sold'
+                  ? 'Sold'
+                  : qty === 1
+                    ? '1 available'
+                    : 'View Details'}
             </span>
           </div>
         </div>

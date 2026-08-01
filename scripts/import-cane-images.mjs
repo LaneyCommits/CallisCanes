@@ -55,7 +55,7 @@ const NAME_OVERRIDES = {
   'senor-elegante': 'The Statesman',
   bison: 'Walking Tall',
   'blacky-cm-cane': 'Midnight Train',
-  bones: 'Old Hickory',
+  bones: 'Old Boney',
   bonker: 'Persuader',
   'bp-tung-oil': 'Magnolia Walker',
   'bradley-oaks': 'Grove Governor',

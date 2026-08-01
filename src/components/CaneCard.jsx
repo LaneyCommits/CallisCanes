@@ -41,6 +41,9 @@ export default function CaneCard({ cane }) {
         <div className="cane-card-body">
           <h3 className="cane-card-title">{cane.name}</h3>
           <p className="cane-card-wood">{cane.wood || 'Wood TBD'}</p>
+          {cane.height ? (
+            <p className="cane-card-height">{cane.height}</p>
+          ) : null}
           <div className="cane-card-meta">
             <span className="cane-card-price">
               {isDisplay ? 'Not for sale' : formatPrice(cane.price)}

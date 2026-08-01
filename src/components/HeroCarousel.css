@@ -169,7 +169,9 @@
 
 @media (min-width: 1024px) {
   .home-hero-copy {
-    flex: 0 0 42%;
+    flex: 0 0 min(42%, 34rem);
+    padding-left: clamp(1.5rem, 4vw, 4rem);
+    padding-right: clamp(1.5rem, 3vw, 3rem);
   }
 }
 
@@ -187,13 +189,13 @@
 @media (min-width: 768px) {
   .home-hero {
     min-height: 0;
-    height: min(calc(100dvh - var(--header-height)), 32rem);
-    max-height: 32rem;
+    height: min(calc(100dvh - var(--header-height)), 34rem);
+    max-height: 34rem;
   }
 
   .home-hero-copy {
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .home-hero-visual {
@@ -203,21 +205,25 @@
 
 @media (min-width: 1000px) {
   .home-hero {
-    height: min(calc(100dvh - var(--header-height)), 34rem);
-    max-height: 34rem;
+    height: min(calc(100dvh - var(--header-height)), 38rem);
+    max-height: 38rem;
   }
 }
 
 @media (min-width: 1200px) {
   .home-hero {
-    height: min(calc(100dvh - var(--header-height)), 36rem);
-    max-height: 36rem;
+    height: min(calc(100dvh - var(--header-height)), 42rem);
+    max-height: 42rem;
   }
 }
 
 @media (min-width: 1440px) {
   .home-hero {
-    height: min(calc(100dvh - var(--header-height)), 38rem);
-    max-height: 38rem;
+    height: min(calc(100dvh - var(--header-height)), 44rem);
+    max-height: 44rem;
+  }
+
+  .home-hero-copy {
+    flex: 0 0 min(40%, 36rem);
   }
 }

@@ -31,7 +31,7 @@ export default function Footer() {
 
           <StaggerItem>
             <div>
-              <h4>Come Sit a Spell</h4>
+              <h4>Quick Links</h4>
               <ul className="footer-links">
                 {site.nav.filter((n) => n.to !== '/').map(({ to, label }) => (
                   <li key={to}><Link to={to}>{label}</Link></li>

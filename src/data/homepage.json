@@ -1,6 +1,6 @@
 {
   "hero": {
-    "headline": "Every cane's got a story.",
+    "headline": "Every cane has a story.",
     "subheading": "Handcrafted from locally sourced hardwood down here in Middle Georgia, showin' off the natural beauty and character of every piece.",
     "primaryCta": { "label": "Browse the Collection", "to": "/collection" },
     "secondaryCta": { "label": "Request a Custom Cane", "to": "/custom-orders" },

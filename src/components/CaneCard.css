@@ -96,7 +96,14 @@
   color: var(--moss-green);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0;
+  line-height: 1.35;
+}
+
+.cane-card-height {
+  font-size: 0.72rem;
+  color: var(--charcoal);
+  margin: 0.2rem 0 0.45rem;
   line-height: 1.35;
 }
 
@@ -150,6 +157,10 @@
     font-size: 0.72rem;
   }
 
+  .cane-card-height {
+    font-size: 0.78rem;
+  }
+
   .status-badge {
     top: 0.55rem;
     left: 0.55rem;
@@ -178,7 +189,12 @@
 
   .cane-card-wood {
     font-size: 0.8rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .cane-card-height {
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0.75rem;
   }
 
   .cane-card-price {

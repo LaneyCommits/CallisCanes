@@ -19,6 +19,17 @@
   background-color: var(--section-surface-muted);
 }
 
+/* Keep featured cards filling the same container width as other homepage grids */
+.home-page .featured-canes-section .cane-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .home-page .featured-canes-section .cane-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .feature-grid > * {
   min-width: 0;
   display: flex;

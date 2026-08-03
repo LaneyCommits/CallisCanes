@@ -5,13 +5,36 @@ import { EASE_OUT } from './motion/easing';
 import './CaneCard.css';
 
 function StatusBadge({ status }) {
-  const key = (status || 'Available').toLowerCase();
-  const label = status === 'Display' ? 'Showpiece' : (status || 'Available');
+  const key = (status || 'Available').toLowerCase().replace(/\s+/g, '-');
+  const label =
+    status === 'Display' ? 'Showpiece'
+      : status === 'Staff' ? 'Staff'
+        : status === 'Special' ? 'Special'
+          : (status || 'Available');
   return (
     <span className={`status-badge status-badge--${key}`}>
       {label}
     </span>
   );
+}
+
+function CaneBadges({ cane }) {
+  const kind = cane.kind === 'Staff' || cane.status === 'Staff'
+    ? 'Staff'
+    : cane.kind === 'Special'
+      ? 'Special'
+      : null;
+
+  if (kind) {
+    return (
+      <>
+        <StatusBadge status="Available" />
+        <StatusBadge status={kind} />
+      </>
+    );
+  }
+
+  return <StatusBadge status={cane.status} />;
 }
 
 export default function CaneCard({ cane }) {
@@ -36,7 +59,9 @@ export default function CaneCard({ cane }) {
           ) : (
             <div className="cane-card-placeholder" aria-hidden="true" />
           )}
-          <StatusBadge status={cane.status} />
+          <div className="cane-card-badges">
+            <CaneBadges cane={cane} />
+          </div>
         </div>
         <div className="cane-card-body">
           <h3 className="cane-card-title">{cane.name}</h3>
@@ -53,9 +78,11 @@ export default function CaneCard({ cane }) {
                 ? 'View'
                 : cane.status === 'Sold'
                   ? 'Sold'
-                  : qty === 1
-                    ? '1 available'
-                    : 'View Details'}
+                  : cane.onePiece
+                    ? 'One piece'
+                    : qty === 1
+                      ? '1 available'
+                      : 'View Details'}
             </span>
           </div>
         </div>

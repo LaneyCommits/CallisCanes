@@ -1,6 +1,6 @@
 {
   "hero": {
-    "headline": "Every cane has a story.",
+    "headline": "No Two Canes Grow the Same.",
     "subheading": "Handcrafted from locally sourced hardwood down here in Middle Georgia, showin' off the natural beauty and character of every piece.",
     "primaryCta": { "label": "Browse the Collection", "to": "/collection" },
     "secondaryCta": { "label": "Request a Custom Cane", "to": "/custom-orders" },
@@ -19,7 +19,7 @@
     },
     {
       "title": "One of a Kind",
-      "description": "No two canes are alike, y'all. Each piece carries the unique voice of its timber."
+      "description": "No two canes are alike. Each piece carries the unique voice of its timber."
     }
   ],
   "featuredSection": {
@@ -38,19 +38,22 @@
     "cta": { "label": "View Gallery", "to": "/gallery" }
   },
   "reviews": {
-    "title": "Kind words from folks",
+    "eyebrow": "Kind words from folks",
+    "title": "What Our Customers Say",
     "items": [
       {
         "quote": "I just received this cane today from John Callis. It is a great cane, absolutely love it. Was lovingly packaged and shipped. He even called to see if I received it and if I liked it. Definitely love it, and hope to purchase again.",
         "author": "Richard",
         "image": "images/reviews/richard-cane.jpg",
-        "imageAlt": "Handcrafted spiral walking cane with bark and polished wood"
+        "imageAlt": "Handcrafted spiral walking cane with bark and polished wood",
+        "imagePosition": "62% 28%"
       },
       {
         "quote": "Just want to say hi to all the followers - and especially to John Callis. I'm a 20-year Army veteran and I was looking for a personalized cane. John built this beautiful baby for me. He made a post with this cane. Well, now it's in my hands! Great page full of friends. Thank you all!!",
         "author": "Fernando Marcano",
         "image": "images/reviews/army-veteran-emblem.webp",
-        "imageAlt": "Army Aviation Association emblem set into a handcrafted cane"
+        "imageAlt": "Army Aviation Association emblem set into a handcrafted cane",
+        "imagePosition": "42% 48%"
       }
     ]
   },

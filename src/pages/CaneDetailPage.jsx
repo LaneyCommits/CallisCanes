@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getCaneBySlug, formatPrice } from '../data';
+import { getCaneBySlug, getSuggestedCanes, formatPrice } from '../data';
 import Button from '../components/Button';
 import ProductMediaGallery from '../components/ProductMediaGallery';
+import CaneCard from '../components/CaneCard';
 import ContactFields, {
   CONTACT_DEFAULTS,
   validateContact,
@@ -15,7 +16,12 @@ import '../components/CaneCard.css';
 export default function CaneDetailPage() {
   const { slug } = useParams();
   const cane = getCaneBySlug(slug);
+  const suggested = cane ? getSuggestedCanes(cane, 8) : [];
   const [inquiryOpen, setInquiryOpen] = useState(false);
+
+  useEffect(() => {
+    setInquiryOpen(false);
+  }, [slug]);
 
   useEffect(() => {
     if (!inquiryOpen) return undefined;
@@ -44,8 +50,11 @@ export default function CaneDetailPage() {
   }
 
   const isDisplay = cane.status === 'Display';
+  const isStaff = cane.kind === 'Staff' || cane.status === 'Staff';
+  const isSpecial = cane.kind === 'Special';
   const isSold = cane.status === 'Sold';
   const canPurchase = !isDisplay && !isSold;
+  const extraBadge = isStaff ? 'Staff' : isSpecial ? 'Special' : null;
 
   return (
     <section className="section cane-detail-section">
@@ -66,9 +75,20 @@ export default function CaneDetailPage() {
               <span className="cane-detail-price">
                 {isDisplay ? 'Not for sale' : formatPrice(cane.price)}
               </span>
-              <span className={`status-badge status-badge--${(cane.status || 'Available').toLowerCase()}`}>
-                {isDisplay ? 'Showpiece' : (cane.status || 'Available')}
-              </span>
+              <div className="cane-card-badges cane-detail-badges">
+                {extraBadge ? (
+                  <>
+                    <span className="status-badge status-badge--available">Available</span>
+                    <span className={`status-badge status-badge--${extraBadge.toLowerCase()}`}>
+                      {extraBadge}
+                    </span>
+                  </>
+                ) : (
+                  <span className={`status-badge status-badge--${(cane.status || 'Available').toLowerCase()}`}>
+                    {isDisplay ? 'Showpiece' : (cane.status || 'Available')}
+                  </span>
+                )}
+              </div>
             </div>
             {cane.description && <p className="cane-detail-lead">{cane.description}</p>}
 
@@ -77,6 +97,12 @@ export default function CaneDetailPage() {
                 <>
                   <dt>Wood Species</dt>
                   <dd>{cane.wood}</dd>
+                </>
+              )}
+              {isStaff && (
+                <>
+                  <dt>Type</dt>
+                  <dd>Walking staff</dd>
                 </>
               )}
               {cane.finish && (
@@ -93,9 +119,11 @@ export default function CaneDetailPage() {
                   ? 'Display only'
                   : isSold
                     ? 'Sold'
-                    : cane.quantity === 1
-                      ? '1 available - inquire to purchase'
-                      : (cane.status || 'Available')}
+                    : cane.onePiece
+                      ? 'One piece — inquire to purchase'
+                      : cane.quantity === 1
+                        ? '1 available — inquire to purchase'
+                        : (cane.status || 'Available')}
               </dd>
               {cane.height && (
                 <>
@@ -123,6 +151,26 @@ export default function CaneDetailPage() {
             )}
           </div>
         </div>
+
+        {suggested.length > 0 && (
+          <div className="cane-detail-suggested">
+            <div className="cane-detail-suggested-header">
+              <h2 className="cane-detail-suggested-title">You Might Also Like</h2>
+              <p className="cane-detail-suggested-sub">Similar wood or height</p>
+            </div>
+            <div
+              className="cane-detail-suggested-scroller"
+              role="list"
+              aria-label="Suggested canes"
+            >
+              {suggested.map((item) => (
+                <div key={item.id} className="cane-detail-suggested-item" role="listitem">
+                  <CaneCard cane={item} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {inquiryOpen && canPurchase && (

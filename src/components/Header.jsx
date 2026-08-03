@@ -1,10 +1,26 @@
-import { useState, useEffect, useLayoutEffect, useCallback } from 'react';
+import { useState, useEffect, useLayoutEffect, useCallback, useMemo } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import Button from './Button';
-import { getSite, caneImageUrl } from '../data';
+import { getSite, getAbout, getCustomOrders, getCaneBySlug, caneImageUrl } from '../data';
 import { EASE_OUT } from './motion/easing';
 import './Header.css';
+
+function pageTitleForPath(pathname) {
+  if (pathname === '/') return null;
+  if (pathname === '/collection') return 'Collection';
+  if (pathname === '/gallery') return 'Gallery';
+  if (pathname === '/faq') return 'FAQ';
+  if (pathname === '/contact') return 'Contact';
+  if (pathname === '/about') return getAbout().title;
+  if (pathname === '/custom-orders') return getCustomOrders().title;
+
+  const caneMatch = pathname.match(/^\/collection\/([^/]+)\/?$/);
+  if (caneMatch) {
+    return getCaneBySlug(decodeURIComponent(caneMatch[1]))?.name || 'Collection';
+  }
+  return null;
+}
 
 export default function Header() {
   const site = getSite();
@@ -12,6 +28,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
+  const pageTitle = useMemo(() => pageTitleForPath(location.pathname), [location.pathname]);
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
@@ -62,16 +79,34 @@ export default function Header() {
             />
           </NavLink>
 
+          {pageTitle && (
+            <p className="header-page-title" aria-hidden="true">
+              {pageTitle}
+            </p>
+          )}
+
           <nav className="nav-desktop" aria-label="Main navigation">
             {site.nav.map(({ to, label }) => (
-              <NavLink key={to} to={to} end={to === '/'}>
+              <NavLink
+                key={to}
+                to={to}
+                end={to === '/'}
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+              >
                 {label}
               </NavLink>
             ))}
           </nav>
 
           <div className="header-actions">
-            <Button to={site.cta.to} variant="forest" size="sm" className="header-cta" resin>
+            <Button
+              to={site.cta.to}
+              variant="forest"
+              size="sm"
+              className={`header-cta${location.pathname.startsWith('/custom-orders') ? ' is-active' : ''}`}
+              resin
+              aria-current={location.pathname.startsWith('/custom-orders') ? 'page' : undefined}
+            >
               {site.cta.label}
             </Button>
 
@@ -113,7 +148,11 @@ export default function Header() {
         <ul className="nav-mobile-links">
           {site.nav.map(({ to, label }) => (
             <li key={to}>
-              <NavLink to={to} end={to === '/'}>
+              <NavLink
+                to={to}
+                end={to === '/'}
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+              >
                 {label}
               </NavLink>
             </li>

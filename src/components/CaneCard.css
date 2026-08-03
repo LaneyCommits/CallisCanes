@@ -40,10 +40,7 @@
 }
 
 .status-badge {
-  position: absolute;
-  top: 0.45rem;
-  left: 0.45rem;
-  z-index: 1;
+  position: static;
   padding: 0.25rem 0.45rem;
   border-radius: var(--radius-sm);
   font-size: 0.58rem;
@@ -52,6 +49,25 @@
   letter-spacing: 0.05em;
   background: var(--cream);
   color: var(--walnut-brown);
+  width: fit-content;
+}
+
+.cane-card-badges {
+  position: absolute;
+  top: 0.45rem;
+  left: 0.45rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.cane-detail-badges {
+  position: static;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .status-badge--available {
@@ -72,6 +88,16 @@
 .status-badge--display {
   background: var(--antique-gold);
   color: var(--walnut-brown);
+}
+
+.status-badge--staff {
+  background: #5c4a3a;
+  color: var(--cream);
+}
+
+.status-badge--special {
+  background: #2f6b3a;
+  color: var(--cream);
 }
 
 .cane-card-body {
@@ -162,8 +188,6 @@
   }
 
   .status-badge {
-    top: 0.55rem;
-    left: 0.55rem;
     font-size: 0.62rem;
     padding: 0.3rem 0.5rem;
   }
@@ -205,9 +229,12 @@
     font-size: 0.75rem;
   }
 
-  .status-badge {
+  .cane-card-badges {
     top: 0.75rem;
     left: 0.75rem;
+  }
+
+  .status-badge {
     font-size: 0.7rem;
     padding: 0.35rem 0.65rem;
   }

@@ -21,7 +21,7 @@
     "id": 3,
     "slug": "bison",
     "name": "Walking Tall",
-    "wood": "Black Walnut and Crape Myrtle",
+    "wood": "Black Walnut and Crepe Myrtle",
     "price": 160,
     "status": "Available",
     "height": "38.75\"",
@@ -40,7 +40,7 @@
     "id": 4,
     "slug": "blacky-cm-cane",
     "name": "Midnight Train",
-    "wood": "Crape Myrtle",
+    "wood": "Crepe Myrtle",
     "price": 195,
     "status": "Available",
     "height": "38\"",
@@ -130,7 +130,7 @@
     "id": 9,
     "slug": "crate-mert-shillelagh",
     "name": "Kudzu Crutch",
-    "wood": "Crape Myrtle handle / Black Walnut shaft",
+    "wood": "Crepe Myrtle handle / Black Walnut shaft",
     "price": 155,
     "status": "Available",
     "height": "38.75\"",
@@ -221,7 +221,7 @@
     "id": 14,
     "slug": "pelican",
     "name": "Bayou Breeze",
-    "wood": "Crape Myrtle",
+    "wood": "Crepe Myrtle",
     "price": 150,
     "status": "Available",
     "height": "38\"",
@@ -257,7 +257,7 @@
     "id": 16,
     "slug": "swagger-stick",
     "name": "The Colonel",
-    "wood": "Crape Myrtle",
+    "wood": "Crepe Myrtle",
     "price": 165,
     "status": "Available",
     "height": "38\"",
@@ -275,7 +275,7 @@
     "id": 17,
     "slug": "thumper",
     "name": "Bubba Stick",
-    "wood": "Crape Myrtle Shillelagh",
+    "wood": "Crepe Myrtle Shillelagh",
     "price": 155,
     "status": "Available",
     "height": "37.25\"",
@@ -293,7 +293,7 @@
     "id": 18,
     "slug": "twisty",
     "name": "Red Dirt Rambler",
-    "wood": "Crape Myrtle",
+    "wood": "Crepe Myrtle",
     "price": 185,
     "status": "Available",
     "height": "37.5\"",
@@ -305,6 +305,501 @@
       "/images/canes/twisty/cover.webp",
       "/images/canes/twisty/side.webp",
       "/images/canes/twisty/handle.webp"
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "masonic-tribute-cane",
+    "name": "Masonic Tribute Cane",
+    "wood": "",
+    "price": "",
+    "status": "Display",
+    "height": "",
+    "finish": "",
+    "description": "Featured showpiece — on display, not for sale. Inquire about a custom tribute piece inspired by this cane.",
+    "featured": false,
+    "quantity": 0,
+    "images": [
+      "/images/canes/masonic-tribute-cane/cover.webp",
+      "/images/canes/masonic-tribute-cane/side.webp",
+      "/images/canes/masonic-tribute-cane/handle.webp",
+      "/images/canes/masonic-tribute-cane/detail-1.webp"
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "alligator-alley-19",
+    "name": "Big John",
+    "wood": "Bradford Pear",
+    "price": "",
+    "status": "Available",
+    "kind": "Staff",
+    "height": "60\"",
+    "finish": "",
+    "description": "A full-length walking staff, handcrafted from Bradford Pear.",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/alligator-alley-19/side.webp",
+      "/images/canes/alligator-alley-19/handle.webp",
+      "/images/canes/alligator-alley-19/detail-1.webp",
+      "/images/canes/alligator-alley-19/detail-2.webp"
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "bandit-21",
+    "name": "Bandit",
+    "wood": "Bradford Pear",
+    "price": "",
+    "status": "Available",
+    "height": "37.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bandit-21/handle.webp",
+      "/images/canes/bandit-21/detail-1.webp",
+      "/images/canes/bandit-21/detail-2.webp"
+    ],
+    "onePiece": true
+  },
+  {
+    "id": 22,
+    "slug": "bayou-bruiser-17",
+    "name": "Bayou Bruiser",
+    "wood": "Chinese Privet",
+    "price": "",
+    "status": "Available",
+    "height": "39.75\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bayou-bruiser-17/handle.webp",
+      "/images/canes/bayou-bruiser-17/detail-1.webp",
+      "/images/canes/bayou-bruiser-17/detail-2.webp"
+    ]
+  },
+  {
+    "id": 23,
+    "slug": "beau-01",
+    "name": "Beau",
+    "wood": "Spalted Hickory — live edge",
+    "price": "",
+    "status": "Available",
+    "height": "38.5\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/beau-01/cover.webp",
+      "/images/canes/beau-01/side.webp",
+      "/images/canes/beau-01/handle.webp"
+    ]
+  },
+  {
+    "id": 24,
+    "slug": "boss-man-23",
+    "name": "Boss Man",
+    "wood": "Chinese Privet",
+    "price": "",
+    "status": "Available",
+    "height": "39.75\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/boss-man-23/side.webp",
+      "/images/canes/boss-man-23/handle.webp"
+    ]
+  },
+  {
+    "id": 25,
+    "slug": "bourbon-reserve-05",
+    "name": "Bourbon Reserve",
+    "wood": "Spalted Hickory shaft",
+    "price": "",
+    "status": "Available",
+    "height": "38.5\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/bourbon-reserve-05/cover.webp",
+      "/images/canes/bourbon-reserve-05/side.webp",
+      "/images/canes/bourbon-reserve-05/handle.webp",
+      "/images/canes/bourbon-reserve-05/detail-1.webp",
+      "/images/canes/bourbon-reserve-05/detail-2.webp"
+    ]
+  },
+  {
+    "id": 26,
+    "slug": "cottonwood-03",
+    "name": "Cottonwood",
+    "wood": "Water Oak / Eastern Red Cedar",
+    "price": "",
+    "status": "Available",
+    "height": "38\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/cottonwood-03/side.webp",
+      "/images/canes/cottonwood-03/handle.webp",
+      "/images/canes/cottonwood-03/detail-1.webp"
+    ]
+  },
+  {
+    "id": 27,
+    "slug": "delta-bramble-08",
+    "name": "Delta Bramble",
+    "wood": "Spalted Pecan and Rosebud",
+    "price": "",
+    "status": "Available",
+    "height": "39.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/delta-bramble-08/handle.webp",
+      "/images/canes/delta-bramble-08/detail-1.webp",
+      "/images/canes/delta-bramble-08/detail-2.webp"
+    ]
+  },
+  {
+    "id": 28,
+    "slug": "foghorn-24",
+    "name": "Foghorn",
+    "wood": "Crepe Myrtle",
+    "price": "",
+    "status": "Available",
+    "height": "38.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/foghorn-24/side.webp"
+    ],
+    "onePiece": true
+  },
+  {
+    "id": 29,
+    "slug": "front-porch-09",
+    "name": "Front Porch",
+    "wood": "Crepe Myrtle",
+    "price": "",
+    "status": "Available",
+    "height": "39.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/front-porch-09/side.webp",
+      "/images/canes/front-porch-09/handle.webp",
+      "/images/canes/front-porch-09/detail-1.webp"
+    ]
+  },
+  {
+    "id": 30,
+    "slug": "gator-tamer-15",
+    "name": "Gator Tamer",
+    "wood": "Chinese Privet",
+    "price": "",
+    "status": "Available",
+    "height": "38.75\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/gator-tamer-15/side.webp",
+      "/images/canes/gator-tamer-15/handle.webp"
+    ],
+    "onePiece": true
+  },
+  {
+    "id": 31,
+    "slug": "good-ol-boy-10",
+    "name": "Good Ol' Boy",
+    "wood": "Chinese Privet",
+    "price": "",
+    "status": "Available",
+    "kind": "Special",
+    "height": "37.25\"",
+    "finish": "St. Patrick's Day green epoxy highlights",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/good-ol-boy-10/side.webp",
+      "/images/canes/good-ol-boy-10/handle.webp"
+    ],
+    "onePiece": true
+  },
+  {
+    "id": 32,
+    "slug": "hank-02",
+    "name": "Hank",
+    "wood": "Spalted Hickory",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/hank-02/cover.webp",
+      "/images/canes/hank-02/side.webp",
+      "/images/canes/hank-02/handle.webp",
+      "/images/canes/hank-02/detail-1.webp",
+      "/images/canes/hank-02/detail-2.webp"
+    ]
+  },
+  {
+    "id": 33,
+    "slug": "hog-heaven-14",
+    "name": "Hog Heaven",
+    "wood": "Spalted Pecan handle / Bradford Pear shaft",
+    "price": "",
+    "status": "Available",
+    "height": "39.75\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/hog-heaven-14/side.webp",
+      "/images/canes/hog-heaven-14/handle.webp",
+      "/images/canes/hog-heaven-14/detail-1.webp"
+    ]
+  },
+  {
+    "id": 34,
+    "slug": "jed-clampett-25",
+    "name": "Jed Clampett",
+    "wood": "Bradford Pear shaft / Plum handle",
+    "price": "",
+    "status": "Available",
+    "height": "40.5\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/jed-clampett-25/side.webp",
+      "/images/canes/jed-clampett-25/handle.webp",
+      "/images/canes/jed-clampett-25/detail-1.webp",
+      "/images/canes/jed-clampett-25/detail-2.webp"
+    ]
+  },
+  {
+    "id": 35,
+    "slug": "kudzu-crawler-11",
+    "name": "Kudzu Crawler",
+    "wood": "Chinese Privet",
+    "price": "",
+    "status": "Available",
+    "height": "38.5\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/kudzu-crawler-11/side.webp",
+      "/images/canes/kudzu-crawler-11/handle.webp"
+    ],
+    "onePiece": true
+  },
+  {
+    "id": 36,
+    "slug": "mosquito-swatter-12",
+    "name": "Mosquito Swatter",
+    "wood": "Chinese Privet",
+    "price": "",
+    "status": "Available",
+    "height": "39.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/mosquito-swatter-12/cover.webp",
+      "/images/canes/mosquito-swatter-12/side.webp",
+      "/images/canes/mosquito-swatter-12/handle.webp"
+    ],
+    "onePiece": true
+  },
+  {
+    "id": 37,
+    "slug": "mud-bogger-13",
+    "name": "Mud Bogger",
+    "wood": "Black Walnut handle / Black Gum shaft",
+    "price": "",
+    "status": "Available",
+    "height": "39.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/mud-bogger-13/side.webp",
+      "/images/canes/mud-bogger-13/handle.webp",
+      "/images/canes/mud-bogger-13/detail-1.webp"
+    ]
+  },
+  {
+    "id": 38,
+    "slug": "pine-knot-04",
+    "name": "Pine Knot",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/pine-knot-04/cover.webp",
+      "/images/canes/pine-knot-04/side.webp"
+    ]
+  },
+  {
+    "id": 39,
+    "slug": "porch-patrol-27",
+    "name": "Porch Patrol",
+    "wood": "Crepe Myrtle",
+    "price": "",
+    "status": "Available",
+    "height": "38.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/porch-patrol-27/side.webp",
+      "/images/canes/porch-patrol-27/handle.webp"
+    ]
+  },
+  {
+    "id": 40,
+    "slug": "root-detector",
+    "name": "Root Detector",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/root-detector/cover.webp",
+      "/images/canes/root-detector/side.webp",
+      "/images/canes/root-detector/handle.webp"
+    ]
+  },
+  {
+    "id": 41,
+    "slug": "rusty-but-trusty-26",
+    "name": "Rusty but Trusty",
+    "wood": "Crepe Myrtle — handle is crepe myrtle root",
+    "price": "",
+    "status": "Available",
+    "height": "39.75\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/rusty-but-trusty-26/side.webp",
+      "/images/canes/rusty-but-trusty-26/handle.webp",
+      "/images/canes/rusty-but-trusty-26/detail-1.webp"
+    ]
+  },
+  {
+    "id": 42,
+    "slug": "smokey-20",
+    "name": "Smokey",
+    "wood": "Bradford Pear",
+    "price": "",
+    "status": "Available",
+    "height": "40\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/smokey-20/side.webp",
+      "/images/canes/smokey-20/handle.webp",
+      "/images/canes/smokey-20/detail-1.webp",
+      "/images/canes/smokey-20/detail-2.webp"
+    ],
+    "onePiece": true
+  },
+  {
+    "id": 43,
+    "slug": "snake-inspector-22",
+    "name": "Snake Inspector",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Sold",
+    "height": "39.25\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 0,
+    "images": [
+      "/images/canes/snake-inspector-22/side.webp",
+      "/images/canes/snake-inspector-22/handle.webp",
+      "/images/canes/snake-inspector-22/detail-2.webp"
+    ]
+  },
+  {
+    "id": 44,
+    "slug": "swamp-stomper-16",
+    "name": "Swamp Stomper",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "39.5\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/swamp-stomper-16/cover.webp",
+      "/images/canes/swamp-stomper-16/side.webp",
+      "/images/canes/swamp-stomper-16/handle.webp"
+    ]
+  },
+  {
+    "id": 47,
+    "slug": "zydeco-strider-18",
+    "name": "Rufus",
+    "wood": "Black Walnut",
+    "price": "",
+    "status": "Available",
+    "height": "39.5\"",
+    "finish": "",
+    "description": "",
+    "featured": false,
+    "quantity": 1,
+    "images": [
+      "/images/canes/zydeco-strider-18/side.webp",
+      "/images/canes/zydeco-strider-18/handle.webp",
+      "/images/canes/zydeco-strider-18/detail-1.webp"
     ]
   }
 ]
